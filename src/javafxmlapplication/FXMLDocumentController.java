@@ -22,8 +22,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 import model.Club;
 import model.ClubDAOException;
+
 
 /**
  *
@@ -36,12 +38,18 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button reservaBoton;
     @FXML
+
+    private Label labelMessage;
+    @FXML
+    private Button iniciar;
+
     private Label titulo;
     private LocalDate dia = null;
     @FXML
     private Label pruebaTexto;
     @FXML
     private DatePicker calendario;
+
     
     //=========================================================
     // event handler, fired when button is clicked or 
@@ -68,6 +76,23 @@ public class FXMLDocumentController implements Initializable {
 
 
     @FXML
+    private void iniciarSesion(ActionEvent event) throws IOException {
+        FXMLLoader miCargador = new
+FXMLLoader(getClass().getResource("FXMLiniciarSesion.fxml"));
+Parent root = miCargador.load();
+Scene scene = new Scene(root,500,300);
+Stage stage = new Stage();
+stage.setScene(scene);
+stage.setTitle("Vista datos persona");
+stage.initModality(Modality.APPLICATION_MODAL);
+//la ventana se muestra modal
+stage.show();
+
+    }
+
+
+
+    @FXML
     private void reservaAccion(ActionEvent event) throws IOException, ClubDAOException {
         FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/ventanaReservas.fxml"));
         Parent root = miCargador.load();
@@ -90,5 +115,6 @@ public class FXMLDocumentController implements Initializable {
         dia = calendario.valueProperty().getValue();
         pruebaTexto.setText(greenBall.getBookings().toString());
     }
+
     
 }
