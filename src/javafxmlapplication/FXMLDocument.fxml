@@ -15,8 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLDocumentController">
    <center>
       <VBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="487.0" BorderPane.alignment="CENTER">
          <children>
@@ -70,7 +69,7 @@
             </Pane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="188.0">
                <children>
-                  <Button mnemonicParsing="false" text="Iniciar Sesión">
+                  <Button fx:id="iniciar" mnemonicParsing="false" onAction="#iniciarSesion" text="Iniciar Sesión">
                      <HBox.margin>
                         <Insets right="10.0" top="20.0" />
                      </HBox.margin>

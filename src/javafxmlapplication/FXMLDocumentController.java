@@ -5,13 +5,19 @@
  */
 package javafxmlapplication;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  *
@@ -24,6 +30,8 @@ public class FXMLDocumentController implements Initializable {
     private Button buttonClick;
     @FXML
     private Label labelMessage;
+    @FXML
+    private Button iniciar;
     
     //=========================================================
     // event handler, fired when button is clicked or 
@@ -39,5 +47,21 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void iniciarSesion(ActionEvent event) throws IOException {
+        FXMLLoader miCargador = new
+FXMLLoader(getClass().getResource("FXMLiniciarSesion.fxml"));
+Parent root = miCargador.load();
+Scene scene = new Scene(root,500,300);
+Stage stage = new Stage();
+stage.setScene(scene);
+stage.setTitle("Vista datos persona");
+stage.initModality(Modality.APPLICATION_MODAL);
+//la ventana se muestra modal
+stage.show();
+
+    }
+
     
 }
