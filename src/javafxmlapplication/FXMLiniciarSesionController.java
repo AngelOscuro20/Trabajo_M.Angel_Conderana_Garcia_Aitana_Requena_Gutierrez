@@ -41,7 +41,7 @@ public class FXMLiniciarSesionController implements Initializable {
 
     @FXML
     private void iniciarSesion(ActionEvent event) throws IOException {
-  
+        
     }
 
     @FXML
