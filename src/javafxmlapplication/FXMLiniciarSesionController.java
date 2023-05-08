@@ -14,22 +14,38 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+import model.*;
+import model.Club;
 /**
  * FXML Controller class
  *
  * @author aitan
  */
 public class FXMLiniciarSesionController implements Initializable {
-
+    
+    private Member User;
+    private Club club;
+    
+    
     @FXML
     private Button botonIniciar;
     @FXML
     private Button botonCancelar;
     @FXML
     private Button botonCrear;
+    @FXML
+    private TextField usuario;
+    
+    
+    @FXML
+    private PasswordField contrasena;
+    @FXML
+    private Label error;
 
     /**
      * Initializes the controller class.
@@ -41,7 +57,11 @@ public class FXMLiniciarSesionController implements Initializable {
 
     @FXML
     private void iniciarSesion(ActionEvent event) throws IOException {
-  
+        
+       club.getMemberByCredentials(usuario.getText(),contrasena.getText());
+       if (User==null){error.setText("error,comprueba el nombre y la contraseña");
+       }
+       
     }
 
     @FXML
@@ -64,4 +84,10 @@ stage.initModality(Modality.APPLICATION_MODAL);
 stage.show();
     }
     
+    public void InitSesion(Club b){
+    
+    club = b;
+    
+    
+    }
 }
