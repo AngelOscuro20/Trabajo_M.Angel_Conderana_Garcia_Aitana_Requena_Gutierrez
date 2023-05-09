@@ -23,6 +23,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.*;
+import model.Club;
 
 import model.Club;
 import model.ClubDAOException;
@@ -42,13 +44,14 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button iniciar;
 
-    @FXML
+
     private Label titulo;
     private LocalDate dia = null;
     @FXML
     private Label pruebaTexto;
     @FXML
     private DatePicker calendario;
+
 
     
     //=========================================================
@@ -62,6 +65,7 @@ public class FXMLDocumentController implements Initializable {
     // you must initialize here all related with the object 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         try {
            greenBall = greenBall.getInstance();
         } catch (ClubDAOException ex) {
@@ -72,6 +76,7 @@ public class FXMLDocumentController implements Initializable {
         dia = dia.now();
         
         titulo.setText(greenBall.getName());
+
     }    
 
 
@@ -80,6 +85,8 @@ public class FXMLDocumentController implements Initializable {
         FXMLLoader miCargador = new
 FXMLLoader(getClass().getResource("FXMLiniciarSesion.fxml"));
 Parent root = miCargador.load();
+FXMLiniciarSesionController controladorInicioSesion = miCargador.getController();
+controladorInicioSesion.initSesion(greenball);
 Scene scene = new Scene(root,500,300);
 Stage stage = new Stage();
 stage.setScene(scene);
@@ -88,7 +95,10 @@ stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
 stage.show();
 
+
+
     }
+    
 
 
 
