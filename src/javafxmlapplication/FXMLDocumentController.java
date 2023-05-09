@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.*;
@@ -34,13 +35,11 @@ import model.ClubDAOException;
  * @author jsoler
  */
 public class FXMLDocumentController implements Initializable {
-    private Club greenBall;
+    private Club greenBall ;
     
-    private Label labelMessage;
+    
     @FXML
     private Button reservaBoton;
-    @FXML
-
     private Label labelMessage;
     @FXML
     private Button iniciar;
@@ -68,7 +67,7 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         try {
-            greenBall = greenBall.getInstance();
+           greenBall = greenBall.getInstance();
         } catch (ClubDAOException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -108,7 +107,7 @@ stage.show();
         FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/ventanaReservas.fxml"));
         Parent root = miCargador.load();
         VentanaReservasController controladorReservas = miCargador.getController();
-        controladorReservas.initReservas(greenBall);
+        controladorReservas.initReservas(greenBall,dia);
         Scene scene = new Scene(root, 500, 300);
         Stage stage = new Stage();
         stage.setScene(scene);

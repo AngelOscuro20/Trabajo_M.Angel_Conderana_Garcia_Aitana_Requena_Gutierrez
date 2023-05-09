@@ -5,54 +5,35 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLDocumentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLDocumentController">
    <center>
       <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="487.0" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="pruebaTexto" prefHeight="0.0" prefWidth="422.0" text="Label" />
             <DatePicker fx:id="calendario" onAction="#calendarioAccion" />
-            <ScrollPane prefHeight="226.0" prefWidth="442.0">
+            <ScrollPane prefHeight="238.0" prefWidth="534.0">
                <content>
-                  <GridPane fx:id="panel" gridLinesVisible="true">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.79998779296875" minWidth="10.0" prefWidth="59.60003662109375" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.4" minWidth="10.0" prefWidth="92.19999999999999" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.19999999999999" minWidth="10.0" prefWidth="74.60001220703126" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.79997558593752" minWidth="0.0" prefWidth="51.19997558593752" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="64.00002441406252" minWidth="0.0" prefWidth="64.00002441406252" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.20001220703125" minWidth="10.0" prefWidth="76.4000244140625" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <padding>
-                        <Insets left="20.0" />
-                     </padding>
-                  </GridPane>
+                  <TableView prefHeight="200.0" prefWidth="550.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Horarios" />
+                      <TableColumn prefWidth="75.0" text="Pista 1" />
+                        <TableColumn prefWidth="75.0" text="Pista 2" />
+                        <TableColumn prefWidth="75.0" text="Pista 3" />
+                        <TableColumn prefWidth="75.0" text="Pista 4" />
+                        <TableColumn prefWidth="75.0" text="Pista 5" />
+                        <TableColumn prefWidth="75.0" text="Pista 6" />
+                    </columns>
+                  </TableView>
                </content>
             </ScrollPane>
          </children>
