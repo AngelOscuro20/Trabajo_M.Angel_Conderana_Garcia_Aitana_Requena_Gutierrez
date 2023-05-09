@@ -52,7 +52,7 @@ public class VentanaReservasController implements Initializable {
     @FXML
     private TableColumn<Booking, String> pista1;
     @FXML
-    private TableColumn<?, ?> pista2;
+    private TableColumn<Booking, String> pista2;
     @FXML
     private TableColumn<?, ?> pista3;
     @FXML
@@ -84,6 +84,9 @@ public class VentanaReservasController implements Initializable {
       horariosFila -> new ReadOnlyStringWrapper(horariosFila.getValue().getFromTime().toString()));
     pista1.setCellValueFactory(
      pista1Fila -> new ReadOnlyStringWrapper(pista1Fila.getValue().getCourt().getName()));
+     pista2.setCellValueFactory(
+     pista2Fila -> new ReadOnlyStringWrapper(pista2Fila.getValue().getMember().getName()));
+    
     }
     public void initReservas(Club b, LocalDate date)
 {
@@ -92,10 +95,12 @@ public class VentanaReservasController implements Initializable {
     datos = b.getForDayBookings(dia);
     conversion = FXCollections.observableArrayList(datos);
     tablaHorarios.setItems(conversion);
-    horarios.setCellValueFactory(
+     horarios.setCellValueFactory(
       horariosFila -> new ReadOnlyStringWrapper(horariosFila.getValue().getFromTime().toString()));
     pista1.setCellValueFactory(
      pista1Fila -> new ReadOnlyStringWrapper(pista1Fila.getValue().getCourt().getName()));
+     pista2.setCellValueFactory(
+     pista2Fila -> new ReadOnlyStringWrapper(pista2Fila.getValue().getMember().getName()));
 }
 
     @FXML
