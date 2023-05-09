@@ -45,6 +45,7 @@ public class FXMLDocumentController implements Initializable {
     private Button iniciar;
 
 
+    @FXML
     private Label titulo;
     private LocalDate dia = null;
     @FXML
@@ -86,7 +87,7 @@ public class FXMLDocumentController implements Initializable {
 FXMLLoader(getClass().getResource("FXMLiniciarSesion.fxml"));
 Parent root = miCargador.load();
 FXMLiniciarSesionController controladorInicioSesion = miCargador.getController();
-controladorInicioSesion.initSesion(greenball);
+controladorInicioSesion.InitSesion(greenBall);
 Scene scene = new Scene(root,500,300);
 Stage stage = new Stage();
 stage.setScene(scene);
