@@ -7,3 +7,4 @@ A la hora del desarrollo del proyecto, los alumnos han utilizado material auxili
 Para que el profesorado pueda comprobar que se ha utilizado, a continuación dejamos una lista con enlaces al codigo utilizado.
 Citaciones:
 https://stackoverflow.com/questions/22191954/javafx-casting-arraylist-to-observablelist
+https://stackoverflow.com/questions/36358044/convert-the-content-of-javafx-textfield-into-integer
