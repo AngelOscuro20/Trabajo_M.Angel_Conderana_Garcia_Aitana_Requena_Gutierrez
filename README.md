@@ -8,3 +8,4 @@ Para que el profesorado pueda comprobar que se ha utilizado, a continuación dej
 Citaciones:
 https://stackoverflow.com/questions/22191954/javafx-casting-arraylist-to-observablelist
 https://stackoverflow.com/questions/36358044/convert-the-content-of-javafx-textfield-into-integer
+https://stackoverflow.com/questions/40472668/numeric-textfield-for-integers-in-javafx-8-with-textformatter-and-or-unaryoperat
