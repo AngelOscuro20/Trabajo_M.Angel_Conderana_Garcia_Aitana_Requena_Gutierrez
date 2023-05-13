@@ -28,7 +28,7 @@ import model.Club;
  */
 public class FXMLiniciarSesionController implements Initializable {
     
-    private Member User;
+    private Member user = null;
     private Club club;
     
     
@@ -56,11 +56,13 @@ public class FXMLiniciarSesionController implements Initializable {
     }    
 
     @FXML
-    private void iniciarSesion(ActionEvent event) throws IOException {
+    private void iniciarSesion(ActionEvent event) throws IOException, ClubDAOException {
         
-       club.getMemberByCredentials(usuario.getText(),contrasena.getText());
-       if (User==null){error.setText("error,comprueba el nombre y la contraseña");
-       }
+       
+      
+      try{ user = club.getMemberByCredentials(usuario.getText(),contrasena.getText());}
+      catch(Exception e ){error.setText("error,comprueba el nombre y la contraseña");}
+       //if ( null == user ){error.setText("error,comprueba el nombre y la contraseña");}
        
     }
 

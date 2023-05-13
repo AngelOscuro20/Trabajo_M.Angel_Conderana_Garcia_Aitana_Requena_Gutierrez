@@ -21,13 +21,13 @@
       <HBox>
          <children>
             <Label text="Nombre" />
-            <TextField />
+            <TextField fx:id="name" />
             <Label text="Apellidos">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
             </Label>
-            <TextField />
+            <TextField fx:id="surname" />
          </children>
       </HBox>
       <Label text="Número de teléfono">
@@ -35,21 +35,22 @@
             <Insets top="10.0" />
          </VBox.margin>
       </Label>
-      <TextField />
+      <TextField fx:id="telf" />
       <Label layoutX="10.0" layoutY="95.0" text="nickname">
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
       </Label>
-      <TextField layoutX="10.0" layoutY="113.0" />
+      <TextField fx:id="nickname" layoutX="10.0" layoutY="113.0" />
       <Label text="contraseña">
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
       </Label>
-      <PasswordField />
+      <PasswordField fx:id="password" />
       <Label text="repetir contraseña" />
-      <PasswordField />
+      <PasswordField fx:id="password2" />
+      <Label fx:id="rcb" />
       <VBox>
          <VBox.margin>
             <Insets top="20.0" />
@@ -63,21 +64,21 @@
             <HBox>
                <children>
                   <Label text="Número" />
-                  <TextField />
+                  <TextField fx:id="numcred" />
                   <Label layoutX="10.0" layoutY="10.0" text="SVC">
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </Label>
-                  <TextField layoutX="38.0" layoutY="10.0" />
+                  <TextField fx:id="svc" layoutX="38.0" layoutY="10.0" />
                </children>
             </HBox>
          </children>
       </VBox>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="registrarse" />
-            <Button mnemonicParsing="false" text="cancelar" />
+            <Button fx:id="botonRegistrarse" mnemonicParsing="false" onAction="#registrarse" text="registrarse" />
+            <Button fx:id="cancelarBoton" mnemonicParsing="false" onAction="#cancel" text="cancelar" />
          </children>
       </HBox>
    </children>
