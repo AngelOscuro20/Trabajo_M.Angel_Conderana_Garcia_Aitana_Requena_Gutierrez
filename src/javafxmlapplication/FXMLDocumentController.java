@@ -105,10 +105,11 @@ stage.show();
 
     @FXML
     private void reservaAccion(ActionEvent event) throws IOException, ClubDAOException {
-        FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/ventanaReservas.fxml"));
+        FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/FXMLGridTimeSlot.fxml"));
         Parent root = miCargador.load();
-        VentanaReservasController controladorReservas = miCargador.getController();
-        controladorReservas.initReservas(greenBall,dia);
+        FXMLGridTimeSlotController controladorReservas = miCargador.getController();
+        controladorReservas.initReservas(greenBall, dia);
+        //controladorReservas.initReservas(greenBall,dia);
         Scene scene = new Scene(root, 500, 300);
         Stage stage = new Stage();
         stage.setScene(scene);
