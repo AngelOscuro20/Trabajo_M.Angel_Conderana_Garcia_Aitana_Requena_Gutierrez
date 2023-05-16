@@ -28,6 +28,7 @@ import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -57,7 +58,7 @@ public class FXMLGridTimeSlotController implements Initializable {
 
     private final LocalTime firstSlotStart = LocalTime.of(9, 0);
     private final Duration slotLength = Duration.ofMinutes(60);
-    private final LocalTime lastSlotStart = LocalTime.of(22, 0);
+    private final LocalTime lastSlotStart = LocalTime.of(21, 0);
 
     // se puede cambiar por codigo la pseudoclase activa de un nodo    
     private static final PseudoClass SELECTED_PSEUDO_CLASS = PseudoClass.getPseudoClass("selected");
@@ -70,12 +71,11 @@ public class FXMLGridTimeSlotController implements Initializable {
     private List<TimeSlot> columna3 = new ArrayList<>();
     private List<TimeSlot> columna4 = new ArrayList<>();
     private List<Booking> pista3 = new ArrayList<>();
-    private List<Booking> pista4= new ArrayList<>();
+    private List<Booking> pista4 = new ArrayList<>();
     private List<TimeSlot> columna5 = new ArrayList<>();
     private List<TimeSlot> columna6 = new ArrayList<>();
     private List<Booking> pista5 = new ArrayList<>();
-    private List<Booking> pista6= new ArrayList<>();
-    
+    private List<Booking> pista6 = new ArrayList<>();
 
     private ObjectProperty<TimeSlot> timeSlotSelected;
 
@@ -121,99 +121,109 @@ public class FXMLGridTimeSlotController implements Initializable {
             //-----------------------------------------------------------
             // lo anyadimos al grid en la posicion x= 1, y= slotIndex
             grid.add(timeSlot.getView(), 1, slotIndex);
+            grid.add(timeSlot.getNick(), 1, slotIndex);
             ObservableList<String> styles = timeSlot.getView().getStyleClass();
-            
+
             for (int j = 0; j < pista1.size(); j++) {
 
                 if (!pista1.isEmpty() && styles.contains("time-slot") && pista1.get(j).getFromTime().atDate(dia).isEqual(timeSlot.getStart())) {
+                    timeSlot.getNick().setText(pista1.get(j).getMember().getNickName());
                     styles.remove("time-slot");
                     styles.add("time-slot-libre");
                 }
 
             }
-        
+
             TimeSlot timeSlot2 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna2);
             columna2.add(timeSlot2);
             registerHandlers(timeSlot2);
-            grid.add(timeSlot2.getView(), 2, slotIndex );
+            grid.add(timeSlot2.getView(), 2, slotIndex);
+            grid.add(timeSlot2.getNick(), 2, slotIndex);
             ObservableList<String> styles2 = timeSlot2.getView().getStyleClass();
-            
+
             for (int j2 = 0; j2 < pista2.size(); j2++) {
 
                 if (!pista2.isEmpty() && styles2.contains("time-slot") && pista2.get(j2).getFromTime().atDate(dia).isEqual(timeSlot2.getStart())) {
+                    timeSlot2.getNick().setText(pista2.get(j2).getMember().getNickName());
                     styles2.remove("time-slot");
                     styles2.add("time-slot-libre");
                 }
 
             }
-            
+
             TimeSlot timeSlot3 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna3);
             columna3.add(timeSlot3);
             registerHandlers(timeSlot3);
-            grid.add(timeSlot3.getView(), 3, slotIndex );
+            grid.add(timeSlot3.getView(), 3, slotIndex);
+            grid.add(timeSlot3.getNick(), 3, slotIndex);
             ObservableList<String> styles3 = timeSlot3.getView().getStyleClass();
-            
+
             for (int j3 = 0; j3 < pista3.size(); j3++) {
 
                 if (!pista3.isEmpty() && styles3.contains("time-slot") && pista3.get(j3).getFromTime().atDate(dia).isEqual(timeSlot3.getStart())) {
+                    timeSlot3.getNick().setText(pista3.get(j3).getMember().getNickName());
                     styles3.remove("time-slot");
                     styles3.add("time-slot-libre");
                 }
 
             }
-            
+
             TimeSlot timeSlot4 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna4);
             columna4.add(timeSlot4);
             registerHandlers(timeSlot4);
-            grid.add(timeSlot4.getView(), 4, slotIndex );
+            grid.add(timeSlot4.getView(), 4, slotIndex);
+            grid.add(timeSlot4.getNick(), 4, slotIndex);
             ObservableList<String> styles4 = timeSlot4.getView().getStyleClass();
-            
+
             for (int j4 = 0; j4 < pista4.size(); j4++) {
 
                 if (!pista4.isEmpty() && styles4.contains("time-slot") && pista4.get(j4).getFromTime().atDate(dia).isEqual(timeSlot4.getStart())) {
+                   timeSlot4.getNick().setText(pista4.get(j4).getMember().getNickName());
                     styles4.remove("time-slot");
                     styles4.add("time-slot-libre");
                 }
 
             }
-            
+
             TimeSlot timeSlot5 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna5);
             columna5.add(timeSlot5);
             registerHandlers(timeSlot5);
-            grid.add(timeSlot5.getView(), 5, slotIndex );
+            grid.add(timeSlot5.getView(), 5, slotIndex);
+            grid.add(timeSlot5.getNick(), 5, slotIndex);
             ObservableList<String> styles5 = timeSlot5.getView().getStyleClass();
-            
+
             for (int j5 = 0; j5 < pista5.size(); j5++) {
 
                 if (!pista5.isEmpty() && styles5.contains("time-slot") && pista5.get(j5).getFromTime().atDate(dia).isEqual(timeSlot5.getStart())) {
+                    timeSlot5.getNick().setText(pista5.get(j5).getMember().getNickName());
                     styles5.remove("time-slot");
                     styles5.add("time-slot-libre");
                 }
             }
-                TimeSlot timeSlot6 = new TimeSlot(startTime, slotLength, null);
+            TimeSlot timeSlot6 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna6);
             columna6.add(timeSlot6);
             registerHandlers(timeSlot6);
-            grid.add(timeSlot6.getView(), 6, slotIndex );
+            grid.add(timeSlot6.getView(), 6, slotIndex);
+            grid.add(timeSlot6.getNick(), 6, slotIndex);
             ObservableList<String> styles6 = timeSlot6.getView().getStyleClass();
-            
+
             for (int j6 = 0; j6 < pista6.size(); j6++) {
 
                 if (!pista6.isEmpty() && styles6.contains("time-slot") && pista6.get(j6).getFromTime().atDate(dia).isEqual(timeSlot6.getStart())) {
+                    timeSlot6.getNick().setText(pista6.get(j6).getMember().getNickName());
                     styles6.remove("time-slot");
                     styles6.add("time-slot-libre");
                 }
 
-            
             }
             slotIndex++;
         }
     }
-    
 
     private void registerHandlers(TimeSlot timeSlot) {
 
@@ -266,8 +276,6 @@ public class FXMLGridTimeSlotController implements Initializable {
 
         //---------------------------------------------------------------------
         //cambia los SlotTime al cambiar de dia
-        
-
         //---------------------------------------------------------------------
         //inicializa el DatePicker al dia actual
         day.setValue(LocalDate.now());
@@ -301,11 +309,11 @@ public class FXMLGridTimeSlotController implements Initializable {
     private void cambioDia(ActionEvent event) {
         dia = day.getValue();
         pista1 = club.getCourtBookings("Pista 1", dia);
-         pista2 = club.getCourtBookings("Pista 2", dia);
-         pista3 = club.getCourtBookings("Pista 3", dia);
-         pista4 = club.getCourtBookings("Pista 4", dia);
-         pista5 = club.getCourtBookings("Pista 5", dia);
-         pista6 = club.getCourtBookings("Pista 6", dia);
+        pista2 = club.getCourtBookings("Pista 2", dia);
+        pista3 = club.getCourtBookings("Pista 3", dia);
+        pista4 = club.getCourtBookings("Pista 4", dia);
+        pista5 = club.getCourtBookings("Pista 5", dia);
+        pista6 = club.getCourtBookings("Pista 6", dia);
         setTimeSlotsGrid(day.getValue());
     }
 
@@ -313,8 +321,9 @@ public class FXMLGridTimeSlotController implements Initializable {
 
         private final LocalDateTime start;
         private final Duration duration;
-        
+
         protected final Pane view;
+        protected final Label nick = new Label();
 
         private final BooleanProperty selected = new SimpleBooleanProperty();
 
@@ -333,8 +342,12 @@ public class FXMLGridTimeSlotController implements Initializable {
         public TimeSlot(LocalDateTime start, Duration duration, Booking booking) {
             this.start = start;
             this.duration = duration;
-            
+
             view = new Pane();
+            
+            nick.setText("");
+            nick.setAlignment(Pos.CENTER);
+            
             view.getStyleClass().add("time-slot");
             // ---------------------------------------------------------------
             // de esta manera cambiamos la apariencia del TimeSlot cuando los seleccionamos
@@ -363,14 +376,12 @@ public class FXMLGridTimeSlotController implements Initializable {
             return duration;
         }
 
-        
-
-        
-
         public Node getView() {
             return view;
         }
-
+        public Label getNick(){
+            return nick;
+        }
     }
 
 }
