@@ -127,5 +127,17 @@ stage.show();
         pruebaTexto.setText(greenBall.getBookings().toString());
     }
 
+    @FXML
+    private void verDetalles(ActionEvent event) throws IOException {
+        
+         FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/detalles.fxml"));
+        Parent root = miCargador.load();
+        
+        JavaFXMLApplication.setRoot(root);
+        
+//la ventana se muestra modal
+        
+    }
+
     
 }
