@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="541.0" prefWidth="537.0" spacing="36.0" stylesheets="@../resources/calendar-view.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLGridTimeSlotController">
+   <children>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="2.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <DatePicker fx:id="day" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#cambioDia" prefHeight="25.0" prefWidth="115.0" GridPane.rowIndex="1" />
+            <Text layoutX="-20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha:" x="-20.0" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="grid" alignment="CENTER" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="420.0" minWidth="560.0" prefHeight="420.0" prefWidth="560.0" VBox.vgrow="NEVER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="477.6666259765625" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="labelCol" text="Pista 1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label text="9:00 - 10:00" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets right="4.0" />
+               </GridPane.margin></Label>
+            <Label text="10:00 - 11:00" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="4.0" />
+               </GridPane.margin></Label>
+            <Label text="11:00 - 12:00" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="4.0" />
+               </GridPane.margin></Label>
+            <Label text="12:00 - 13:00" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="4.0" />
+               </GridPane.margin></Label>
+            <Label text="13:00 - 14:00" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="4.0" />
+               </GridPane.margin></Label>
+            <Label text="14:00 - 15:00" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="4.0" />
+               </GridPane.margin></Label>
+            <Label text="15:00 - 16:00" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="4.0" />
+               </GridPane.margin></Label>
+            <Label text="16:00 - 17:00" GridPane.halignment="RIGHT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="4.0" />
+               </GridPane.margin></Label>
+            <Label text="17:00 -18:00" GridPane.halignment="RIGHT" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="4.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="labelCol2" alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="17.0" prefHeight="18.0" prefWidth="216.0" text="Pista 2" GridPane.columnIndex="2" />
+            <Label text="18:00 -19:00" GridPane.rowIndex="10" />
+            <Label text="19:00 - 20:00" GridPane.rowIndex="11" />
+            <Label text="20:00 -21:00" GridPane.rowIndex="12" />
+            <Label text="21:00 -22:00" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Pista 3" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Pista 4" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label text="Pista 5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label text="Pista 6" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <Label fx:id="slotSelected" textFill="#6811f5" VBox.vgrow="NEVER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+   <padding>
+      <Insets bottom="24.0" left="48.0" right="48.0" top="48.0" />
+   </padding>
+</VBox>
