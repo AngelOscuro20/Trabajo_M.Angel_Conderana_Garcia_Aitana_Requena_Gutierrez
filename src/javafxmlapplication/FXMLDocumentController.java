@@ -203,6 +203,18 @@ stage.show();
     }
 
     @FXML
+
+    private void verDetalles(ActionEvent event) throws IOException {
+        
+         FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/detalles.fxml"));
+        Parent root = miCargador.load();
+        
+        JavaFXMLApplication.setRoot(root);
+        
+//la ventana se muestra modal
+        
+    }
+
     private void cambioDia(ActionEvent event) {
         dia = day.getValue();
         pista1 = greenBall.getCourtBookings("Pista 1", dia);
@@ -350,6 +362,7 @@ stage.show();
             slotIndex++;
         }
     }
+
     
      private void registerHandlers(TimeSlot timeSlot) {
 

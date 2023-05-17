@@ -77,6 +77,8 @@ public class FXMLiniciarSesionController implements Initializable {
          FXMLLoader miCargador = new
 FXMLLoader(getClass().getResource("FXMLcrearCuenta.fxml"));
 Parent root = miCargador.load();
+FXMLcrearCuentaController controladorCrearCuenta = miCargador.getController();
+controladorCrearCuenta.InitSesion(club);
 Scene scene = new Scene(root,500,300);
 Stage stage = new Stage();
 stage.setScene(scene);
