@@ -79,7 +79,7 @@ public class FXMLDocumentController implements Initializable {
     private List<TimeSlot> columna6 = new ArrayList<>();
     private List<Booking> pista5 = new ArrayList<>();
     private List<Booking> pista6 = new ArrayList<>();
-    
+    private Member user;
     
     @FXML
     private Button reservaBoton;
@@ -102,6 +102,8 @@ public class FXMLDocumentController implements Initializable {
     private Label labelCol;
     @FXML
     private Label labelCol2;
+    @FXML
+    private Button misReservasBoton;
 
 
     
@@ -148,7 +150,8 @@ public class FXMLDocumentController implements Initializable {
 
         //---------------------------------------------------------------------
         // enlazamos timeSlotSelected con el label para mostrar la seleccion
-        
+        reservaBoton.setDisable(true);
+        misReservasBoton.setDisable(true);
     }
   
 
@@ -166,8 +169,14 @@ stage.setScene(scene);
 stage.setTitle("Vista datos persona");
 stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
-stage.show();
-
+stage.showAndWait();
+ if(controladorInicioSesion.cuentaLista == true){
+     user = controladorInicioSesion.getMember();
+     iniciar.setVisible(false);
+     reservaBoton.setDisable(false);
+     misReservasBoton.setDisable(false);
+     pruebaTexto.setText(user.getNickName());
+ }
 
 
     }
@@ -180,7 +189,7 @@ stage.show();
         FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/FXMLGridTimeSlot.fxml"));
         Parent root = miCargador.load();
         FXMLGridTimeSlotController controladorReservas = miCargador.getController();
-        controladorReservas.initReservas(greenBall, dia);
+        controladorReservas.initReservas(greenBall, user, dia);
         //controladorReservas.initReservas(greenBall,dia);
         Scene scene = new Scene(root, 600, 600);
         Stage stage = new Stage();

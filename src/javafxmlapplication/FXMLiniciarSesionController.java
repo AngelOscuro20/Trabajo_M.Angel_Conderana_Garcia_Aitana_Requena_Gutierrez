@@ -28,9 +28,9 @@ import model.Club;
  */
 public class FXMLiniciarSesionController implements Initializable {
     
-    private Member user = null;
+    public Member user = null;
     private Club club;
-    
+    public boolean cuentaLista = false;
     
     @FXML
     private Button botonIniciar;
@@ -60,10 +60,14 @@ public class FXMLiniciarSesionController implements Initializable {
         
        
       
-      try{ user = club.getMemberByCredentials(usuario.getText(),contrasena.getText());}
+      try{ user = club.getMemberByCredentials(usuario.getText(),contrasena.getText());
+      if(user == null){error.setText("error , comprueba el nombre y la contraseña");}
+      else{cuentaLista = true;
+       ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();}
+      }
       catch(Exception e ){error.setText("error,comprueba el nombre y la contraseña");}
-       //if ( null == user ){error.setText("error,comprueba el nombre y la contraseña");}
        
+      
     }
 
     @FXML
@@ -92,4 +96,9 @@ stage.show();
     
     
     }
-}
+    
+    public Member getMember(){
+    
+    return user;
+    }
+            }

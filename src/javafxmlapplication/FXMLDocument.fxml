@@ -149,7 +149,7 @@
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="reservaBoton" mnemonicParsing="false" onAction="#reservaAccion" prefHeight="46.0" prefWidth="111.0" text="Hacer Reserva" />
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="103.0" text="Mis reservas" />
+            <Button fx:id="misReservasBoton" mnemonicParsing="false" prefHeight="46.0" prefWidth="103.0" text="Mis reservas" />
          </children>
       </VBox>
    </right>
