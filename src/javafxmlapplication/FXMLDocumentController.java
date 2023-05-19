@@ -252,7 +252,7 @@ stage.showAndWait();
               TimeSlot timeSlot = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna1);
             columna1.add(timeSlot);
-            registerHandlers(timeSlot);
+            
             //-----------------------------------------------------------
             // lo anyadimos al grid en la posicion x= 1, y= slotIndex
             grid.add(timeSlot.getView(), 1, slotIndex);
@@ -272,7 +272,7 @@ stage.showAndWait();
             TimeSlot timeSlot2 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna2);
             columna2.add(timeSlot2);
-            registerHandlers(timeSlot2);
+            
             grid.add(timeSlot2.getView(), 2, slotIndex);
             grid.add(timeSlot2.getNick(), 2, slotIndex);
             ObservableList<String> styles2 = timeSlot2.getView().getStyleClass();
@@ -290,7 +290,7 @@ stage.showAndWait();
             TimeSlot timeSlot3 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna3);
             columna3.add(timeSlot3);
-            registerHandlers(timeSlot3);
+            
             grid.add(timeSlot3.getView(), 3, slotIndex);
             grid.add(timeSlot3.getNick(), 3, slotIndex);
             ObservableList<String> styles3 = timeSlot3.getView().getStyleClass();
@@ -308,7 +308,7 @@ stage.showAndWait();
             TimeSlot timeSlot4 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna4);
             columna4.add(timeSlot4);
-            registerHandlers(timeSlot4);
+            
             grid.add(timeSlot4.getView(), 4, slotIndex);
             grid.add(timeSlot4.getNick(), 4, slotIndex);
             ObservableList<String> styles4 = timeSlot4.getView().getStyleClass();
@@ -326,7 +326,7 @@ stage.showAndWait();
             TimeSlot timeSlot5 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna5);
             columna5.add(timeSlot5);
-            registerHandlers(timeSlot5);
+            
             grid.add(timeSlot5.getView(), 5, slotIndex);
             grid.add(timeSlot5.getNick(), 5, slotIndex);
             ObservableList<String> styles5 = timeSlot5.getView().getStyleClass();
@@ -342,7 +342,7 @@ stage.showAndWait();
             TimeSlot timeSlot6 = new TimeSlot(startTime, slotLength, null);
             timeSlots.add(columna6);
             columna6.add(timeSlot6);
-            registerHandlers(timeSlot6);
+            
             grid.add(timeSlot6.getView(), 6, slotIndex);
             grid.add(timeSlot6.getNick(), 6, slotIndex);
             ObservableList<String> styles6 = timeSlot6.getView().getStyleClass();
@@ -359,44 +359,29 @@ stage.showAndWait();
             slotIndex++;
         }
     }
-    
-     private void registerHandlers(TimeSlot timeSlot) {
 
-        timeSlot.getView().setOnMousePressed((MouseEvent event) -> {
-            //---------------------------------------------slot----------------------------
-            //solamente puede estar seleccionado un slot dentro de la lista de slot
-            columna1.forEach(slot -> {
-                slot.setSelected(slot == timeSlot);
-            });
-
-            columna2.forEach(slot -> {
-                slot.setSelected(slot == timeSlot);
-            });
-            //----------------------------------------------------------------
-            //actualizamos el label Dia-Hora, esto es ad hoc,  para mi diseño
-            timeSlotSelected.setValue(timeSlot);
-            //----------------------------------------------------------------
-            // si es un doubleClik  vamos a mostrar una alerta y cambiar el estilo de la celda
-
-            if (event.getClickCount() > 1) {
-                Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
-                alerta.setTitle("SlotTime");
-                alerta.setHeaderText("Confirma la selecció");
-                alerta.setContentText("Has seleccionat: "
-                        + timeSlot.getDate().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)) + ", "
-                        + timeSlot.getTime().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)));
-                Optional<ButtonType> result = alerta.showAndWait();
-                if (result.isPresent() && result.get() == ButtonType.OK) {
-                    ObservableList<String> styles = timeSlot.getView().getStyleClass();
-                    if (styles.contains("time-slot")) {
-                        styles.remove("time-slot");
-                        styles.add("time-slot-libre");
-                    }
-                }
-            }
-        });
-
+    @FXML
+    private void misReservasAccion(ActionEvent event) throws IOException {
+        FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/FXMLMisReservas.fxml"));
+        Parent root = miCargador.load();
+        FXMLMisReservasController controladorMisReservas = miCargador.getController();
+        controladorMisReservas.initMisReservas(greenBall, user);
+        //controladorReservas.initReservas(greenBall,dia);
+        Scene scene = new Scene(root, 600, 600);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Vista datos persona");
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setResizable(false);
+        stage.sizeToScene();
+//la ventana se muestra modal
+        stage.showAndWait();
+        stage.setMinWidth(stage.getWidth());
+        stage.setMinHeight(stage.getHeight());
+        
     }
+    
+     
      
     public class TimeSlot {
 
