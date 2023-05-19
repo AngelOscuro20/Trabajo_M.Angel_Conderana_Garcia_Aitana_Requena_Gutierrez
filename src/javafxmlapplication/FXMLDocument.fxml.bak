@@ -157,7 +157,7 @@
       </HBox>
    </top>
    <right>
-
+<<<<<<< HEAD
       <VBox prefHeight="518.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
 
       <VBox prefHeight="355.0" prefWidth="100.0" BorderPane.alignment="CENTER">

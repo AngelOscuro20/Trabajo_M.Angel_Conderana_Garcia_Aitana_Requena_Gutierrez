@@ -109,11 +109,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label labelCol2;
     @FXML
-
+<<<<<<< HEAD
     private Button misReservasBoton;
-
+=======
     private ImageView imgCuenta;
-
+>>>>>>> master
 
 
     
@@ -384,8 +384,46 @@ stage.showAndWait();
             slotIndex++;
         }
     }
+<<<<<<< HEAD
+=======
 
+    
+     private void registerHandlers(TimeSlot timeSlot) {
 
+        timeSlot.getView().setOnMousePressed((MouseEvent event) -> {
+            //---------------------------------------------slot----------------------------
+            //solamente puede estar seleccionado un slot dentro de la lista de slot
+            columna1.forEach(slot -> {
+                slot.setSelected(slot == timeSlot);
+            });
+
+            columna2.forEach(slot -> {
+                slot.setSelected(slot == timeSlot);
+            });
+            //----------------------------------------------------------------
+            //actualizamos el label Dia-Hora, esto es ad hoc,  para mi diseño
+            timeSlotSelected.setValue(timeSlot);
+            //----------------------------------------------------------------
+            // si es un doubleClik  vamos a mostrar una alerta y cambiar el estilo de la celda
+
+            if (event.getClickCount() > 1) {
+                Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+                alerta.setTitle("SlotTime");
+                alerta.setHeaderText("Confirma la selecció");
+                alerta.setContentText("Has seleccionat: "
+                        + timeSlot.getDate().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)) + ", "
+                        + timeSlot.getTime().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)));
+                Optional<ButtonType> result = alerta.showAndWait();
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    ObservableList<String> styles = timeSlot.getView().getStyleClass();
+                    if (styles.contains("time-slot")) {
+                        styles.remove("time-slot");
+                        styles.add("time-slot-libre");
+                    }
+                }
+            }
+        });
+>>>>>>> master
 
     @FXML
     private void misReservasAccion(ActionEvent event) throws IOException {
@@ -407,7 +445,10 @@ stage.showAndWait();
         stage.setMinHeight(stage.getHeight());
         
     }
-
+<<<<<<< HEAD
+    
+     
+=======
 
     @FXML
     private void verCuenta(MouseEvent event) throws IOException {
@@ -421,7 +462,7 @@ stage.showAndWait();
         
         JavaFXMLApplication.setRoot(root);
     }
-
+>>>>>>> master
      
     public class TimeSlot {
 

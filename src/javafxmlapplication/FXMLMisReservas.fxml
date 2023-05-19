@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="javafxmlapplication.FXMLMisReservasController">
+   <children>
+      <TableView fx:id="reservasUsuario" layoutX="8.0" layoutY="100.0" prefHeight="200.0" prefWidth="583.0">
+        <columns>
+          <TableColumn fx:id="fecha" prefWidth="145.5999755859375" text="Horario de la reserva" />
+          <TableColumn fx:id="pista" prefWidth="93.60003662109375" text="Pista" />
+            <TableColumn fx:id="fechaReserva" prefWidth="148.79998779296875" text="Fecha en la que se hizo" />
+            <TableColumn fx:id="pago" prefWidth="75.0" text="Pagada" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
