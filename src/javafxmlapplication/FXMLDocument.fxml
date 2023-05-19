@@ -137,12 +137,16 @@
             </Pane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="188.0">
                <children>
-                  <Button fx:id="iniciar" mnemonicParsing="false" onAction="#iniciarSesion" text="Iniciar Sesión">
+                  <VBox>
                      <HBox.margin>
                         <Insets right="10.0" top="20.0" />
                      </HBox.margin>
-                  </Button>
-                  <ImageView fitHeight="78.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <children>
+                        <Button fx:id="iniciar" mnemonicParsing="false" onAction="#iniciarSesion" text="Iniciar Sesión" />
+                        <Button mnemonicParsing="false" text="ver cuenta" />
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="imgCuenta" fitHeight="78.0" fitWidth="84.0" onMouseClicked="#verCuenta" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/default.png" />
                      </image>
@@ -153,6 +157,15 @@
       </HBox>
    </top>
    <right>
+
       <VBox prefHeight="518.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+
+      <VBox prefHeight="355.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="reservaBoton" mnemonicParsing="false" onAction="#reservaAccion" prefHeight="46.0" prefWidth="111.0" text="Hacer Reserva" />
+            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="103.0" text="Mis reservas" />
+         </children>
+      </VBox>
+
    </right>
 </BorderPane>
