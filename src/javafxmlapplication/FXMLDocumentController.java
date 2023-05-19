@@ -5,6 +5,10 @@
  */
 package javafxmlapplication;
 
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
@@ -41,6 +45,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -102,6 +108,8 @@ public class FXMLDocumentController implements Initializable {
     private Label labelCol;
     @FXML
     private Label labelCol2;
+    @FXML
+    private ImageView imgCuenta;
 
 
     
@@ -116,7 +124,20 @@ public class FXMLDocumentController implements Initializable {
     // you must initialize here all related with the object 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        
+        
+        String AvatarDef = ("src\\resources\\avatars\\default.PNG");
+        //String AAA = ("libraries\\resources\\avatars\\default.PNG");
+        Image avatar = null;
+        try {
+            avatar = new Image(new FileInputStream(AvatarDef));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        imgCuenta.imageProperty().setValue(avatar);   
+        
+        //inicializa la imagen default, en teoría, si le apetece fufar
+        
         try {
            greenBall = greenBall.getInstance();
         } catch (ClubDAOException ex) {
@@ -202,19 +223,9 @@ stage.show();
         pruebaTexto.setText(greenBall.getBookings().toString());
     }
 
+
+
     @FXML
-
-    private void verDetalles(ActionEvent event) throws IOException {
-        
-         FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/detalles.fxml"));
-        Parent root = miCargador.load();
-        
-        JavaFXMLApplication.setRoot(root);
-        
-//la ventana se muestra modal
-        
-    }
-
     private void cambioDia(ActionEvent event) {
         dia = day.getValue();
         pista1 = greenBall.getCourtBookings("Pista 1", dia);
@@ -400,6 +411,19 @@ stage.show();
             }
         });
 
+    }
+
+    @FXML
+    private void verCuenta(MouseEvent event) throws IOException {
+            FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/detalles.fxml"));
+        Parent root = miCargador.load();
+        
+        DetallesController controladorMiCuenta = miCargador.getController();
+        controladorMiCuenta.InitCuenta(greenBall,member);
+        
+        
+        
+        JavaFXMLApplication.setRoot(root);
     }
      
     public class TimeSlot {

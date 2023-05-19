@@ -13,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import model.Club;
+import model.Member;
 
 /**
  * FXML Controller class
@@ -39,12 +41,15 @@ public class DetallesController implements Initializable {
     @FXML
     private Label rcb;//mensaje de error
 
+    private Member User ;
+    private Club club;
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        name.setText(User.getName());
     }    
 
 
@@ -63,5 +68,13 @@ public class DetallesController implements Initializable {
     @FXML
     private void cambImg(ActionEvent event) {
     }
+    
+     public void InitCuenta(Club b,Member m) {
+
+        club = b;
+        User = m;
+
+    }
+
     
 }
