@@ -52,11 +52,11 @@ public class FXMLMisReservasController implements Initializable {
     List<Booking> bookings = club.getUserBookings(member.getNickName());
     misReservas = FXCollections.observableArrayList(bookings);
     reservasUsuario.setItems(misReservas);
-    fecha.setCellValueFactory(fechaPropiedad -> new ReadOnlyStringWrapper(fechaPropiedad.getValue().getMadeForDay().format(DateTimeFormatter.ISO_DATE)));
+    fecha.setCellValueFactory(fechaPropiedad -> new ReadOnlyStringWrapper(fechaPropiedad.getValue().getMadeForDay().format(DateTimeFormatter.ISO_DATE) + " : " + fechaPropiedad.getValue().getFromTime().format(DateTimeFormatter.ISO_TIME) ));
 
     pista.setCellValueFactory(pistaPropiedad -> new ReadOnlyStringWrapper(pistaPropiedad.getValue().getCourt().getName()));
 
-   fechaReserva.setCellValueFactory(fechaReservaPropiedad -> new ReadOnlyStringWrapper(fechaReservaPropiedad.getValue().getFromTime().format(DateTimeFormatter.ISO_DATE)));
+   fechaReserva.setCellValueFactory(fechaReservaPropiedad -> new ReadOnlyStringWrapper(fechaReservaPropiedad.getValue().getBookingDate().format(DateTimeFormatter.ISO_DATE) + " : " + fechaReservaPropiedad.getValue().getBookingDate().format(DateTimeFormatter.ISO_TIME)  ));
 
    pago.setCellValueFactory(pagoPropiedad -> new ReadOnlyStringWrapper(pagoPropiedad.getValue().getPaid().toString()));
 

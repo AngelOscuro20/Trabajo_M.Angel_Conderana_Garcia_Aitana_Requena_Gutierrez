@@ -5,6 +5,7 @@
  */
 package javafxmlapplication;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.Duration;
@@ -29,9 +30,12 @@ import javafx.collections.ObservableList;
 import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -40,6 +44,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import model.Booking;
 import model.Club;
 import model.ClubDAOException;
@@ -81,7 +86,7 @@ public class FXMLGridTimeSlotController implements Initializable {
     private List<TimeSlot> columna6 = new ArrayList<>();
     private List<Booking> pista5 = new ArrayList<>();
     private List<Booking> pista6 = new ArrayList<>();
-
+    public boolean pulsado = false;
     private ObjectProperty<TimeSlot> timeSlotSelected;
 
     private LocalDate daySelected;
@@ -255,7 +260,9 @@ public class FXMLGridTimeSlotController implements Initializable {
             timeSlotSelected.setValue(timeSlot);
             //----------------------------------------------------------------
             // si es un doubleClik  vamos a mostrar una alerta y cambiar el estilo de la celda
+            List<Booking> memberBookings = null;
             Booking booking = null;
+            boolean disponible = true;
             if (event.getClickCount() > 1) {
                 Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("SlotTime");
@@ -268,7 +275,24 @@ public class FXMLGridTimeSlotController implements Initializable {
                     ObservableList<String> styles = timeSlot.getView().getStyleClass();
                     Court court = timeSlot.getCourt();
                     if (styles.contains("time-slot")) {
+                        memberBookings = club.getUserBookings(user.getNickName());
+                        for(int i = 0; i < memberBookings.size() - 1;i++){
+                        //mira hacia abajo
+                        if(memberBookings.get(i).getCourt().equals(timeSlot.getCourt()) && memberBookings.get(i).getMadeForDay().equals(dia) && memberBookings.get(i).getFromTime().equals(timeSlot.getTime().minusHours(2)) && memberBookings.get(i + 1).getFromTime().equals(timeSlot.getTime().minusHours(1))){
+                       
+                            disponible = false;
+                        }
+                        //mira hacia arriba
+                        if(i != 0){
+                        if(memberBookings.get(i).getCourt().equals(timeSlot.getCourt()) && memberBookings.get(i).getMadeForDay().equals(dia) && memberBookings.get(i).getFromTime().equals(timeSlot.getTime().plusHours(2)) && memberBookings.get(i - 1).getFromTime().equals(timeSlot.getTime().plusHours(1))){
+                           disponible = false;
+                        }
+                        
+                        }
+                        }
+                        if(disponible){
                         try {
+                             
                             booking = club.registerBooking(LocalDateTime.now(), dia, timeSlot.getStart().toLocalTime(), true,timeSlot.getCourt(), user);
                            
                         } catch (ClubDAOException ex) {
@@ -277,13 +301,21 @@ public class FXMLGridTimeSlotController implements Initializable {
                             styles.remove("time-slot");
                             styles.add("time-slot-libre");
                             timeSlot.nick.setText(user.getNickName());
-                          
+                            Stage stage = (Stage) day.getScene().getWindow();
+                            pulsado = true;
+                            
                              
                            
                         
                         
                            
-                        
+                        }else {
+                                                        disponible = true;
+                        Alert alerta2 = new Alert(Alert.AlertType.ERROR);
+                            alerta2.setTitle("Error");
+                            alerta2.setHeaderText("No puedes reservar mas de 2 horas seguidas");
+                            Optional<ButtonType> result2 = alerta2.showAndWait();
+                        } 
                     }
                 }
             }
@@ -347,7 +379,17 @@ public class FXMLGridTimeSlotController implements Initializable {
         setTimeSlotsGrid(day.getValue());
     }
 
-    public class TimeSlot {
+    private void FXMLLoader(URL resource) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public boolean getPulsado(){
+    return pulsado;
+    }
+    public LocalDate getDia(){
+    return dia;
+    } 
+   public class TimeSlot {
 
         private final LocalDateTime start;
         private final Duration duration;
