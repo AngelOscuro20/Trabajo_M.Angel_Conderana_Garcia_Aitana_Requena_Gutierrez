@@ -4,12 +4,19 @@
  */
 package javafxmlapplication;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -23,8 +30,6 @@ import model.Member;
  */
 public class DetallesController implements Initializable {
 
-    @FXML
-    private Button cerrarSesion;
     private TextField nombreLabel;
     @FXML
     private TextField name;
@@ -43,26 +48,72 @@ public class DetallesController implements Initializable {
 
     private Member User ;
     private Club club;
+    public boolean cambiado = false;
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        name.setText(User.getName());
+       boolean a= numTester(telf.getText());
+        
     }    
-
+    
+    private boolean numTester(String a){ // comprueba que una cadena de caracteres esta compuesta exclusivamente de números
+       try {double b= Double.parseDouble(a);}
+      catch (NumberFormatException ex){
+            return false;
+        }
+       return true;   
+    }
 
     @FXML
     private void cambCont(ActionEvent event) {
     }
 
     @FXML
-    private void cancelar(ActionEvent event) {
+    private void cancelar(ActionEvent event) throws IOException {
+        
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+alert.setTitle("Diálogo de confirmación");
+alert.setHeaderText(null);
+alert.setContentText("¿Seguro que quieres continuar?");
+Optional<ButtonType> result = alert.showAndWait();
+if (result.isPresent() && result.get() == ButtonType.OK){ 
+
+   ((Button) event.getSource()).getScene().getWindow().hide();
+} else {
+System.out.println("CANCEL");
+}
+        
+        
     }
 
     @FXML
     private void aceptar(ActionEvent event) {
+        
+        if(telf.getText().length()!=9||!numTester(telf.getText())){rcb.setText("numero de telefono incompatible");}else{
+        if(name.getText().isEmpty()||surname.getText().isEmpty()){rcb.setText("tu nombre o tu apellido se encuentra vacio");}else{
+            
+        User.setName(name.getText());
+        User.setSurname(surname.getText());  
+        User.setTelephone(telf.getText());
+        rcb.setText("cambios realizados correctamente");
+        }}
+        
+        if(!numTarjeta.getText().isEmpty() || !cvs.getText().isEmpty()){
+         if(numTarjeta.getText().length()!=16||!(numTester(numTarjeta.getText()))){rcb.setText("numero de tarjeta incompatible");}else{
+         if(cvs.getText().length()!=3||!numTester(cvs.getText())){rcb.setText(" cvs incompatible");}else{      
+             
+             User.setCreditCard(numTarjeta.getText());
+             User.setSvc(Integer.parseInt(cvs.getText()));
+             
+             rcb.setText("cambios realizados correctamente");
+             }
+        
+         }
+      }
+        
     }
 
     @FXML
@@ -73,8 +124,18 @@ public class DetallesController implements Initializable {
 
         club = b;
         User = m;
-
+        name.setText(User.getName());
+        surname.setText(User.getSurname());
+        telf.setText(User.getTelephone());
+        
+        numTarjeta.setText(User.getCreditCard());
+        cvs.setText(String.valueOf(User.getSvc()));
+        
     }
 
     
+   
 }
+
+    
+
