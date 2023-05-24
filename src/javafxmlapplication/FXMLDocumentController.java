@@ -213,7 +213,7 @@ stage.showAndWait();
         Parent root = miCargador.load();
         FXMLGridTimeSlotController controladorReservas = miCargador.getController();
         controladorReservas.initReservas(greenBall, user, dia);
-        //controladorReservas.initReservas(greenBall,dia);
+        
         Scene scene = new Scene(root, 600, 600);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -222,9 +222,13 @@ stage.showAndWait();
         stage.setResizable(false);
         stage.sizeToScene();
 //la ventana se muestra modal
-        stage.showAndWait();
         stage.setMinWidth(stage.getWidth());
         stage.setMinHeight(stage.getHeight());
+        stage.showAndWait();
+        if(controladorReservas.getPulsado() == true){
+            setTimeSlotsGrid(controladorReservas.getDia());
+            pruebaTexto.setText("true");
+        }
                                                                                                                                                     
     }
 
@@ -407,6 +411,12 @@ stage.showAndWait();
         stage.setMinHeight(stage.getHeight());
         
     }
+
+    
+     public void actualizarGrid(LocalDate fecha){
+     setTimeSlotsGrid(fecha);
+     }
+
 
 
     @FXML
