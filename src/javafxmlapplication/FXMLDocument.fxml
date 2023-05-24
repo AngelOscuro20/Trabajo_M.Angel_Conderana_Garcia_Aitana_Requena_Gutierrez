@@ -148,7 +148,7 @@
                   </VBox>
                   <ImageView fx:id="imgCuenta" fitHeight="78.0" fitWidth="84.0" onMouseClicked="#verCuenta" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/default.png" />
+                        <Image url="@../resources/avatars/default.png" />
                      </image>
                   </ImageView>
                </children>

@@ -109,7 +109,6 @@
       </Label>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="cerrarSesion" mnemonicParsing="false" text="cerrar sesion" />
             <Button mnemonicParsing="false" onAction="#cancelar" text="CANCELAR" />
             <Button mnemonicParsing="false" onAction="#aceptar" text="ACEPTAR CAMBIOS" />
          </children>

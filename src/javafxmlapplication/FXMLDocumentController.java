@@ -112,6 +112,7 @@ public class FXMLDocumentController implements Initializable {
 
     private Button misReservasBoton;
 
+    @FXML
     private ImageView imgCuenta;
 
 
@@ -129,16 +130,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        
-        String AvatarDef = ("src\\resources\\avatars\\default.PNG");
-        //String AAA = ("libraries\\resources\\avatars\\default.PNG");
-        Image avatar = null;
-        try {
-            avatar = new Image(new FileInputStream(AvatarDef));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        imgCuenta.imageProperty().setValue(avatar);   
+       
         
         //inicializa la imagen default, en teoría, si le apetece fufar
         
@@ -421,15 +413,25 @@ stage.showAndWait();
 
     @FXML
     private void verCuenta(MouseEvent event) throws IOException {
-            FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/detalles.fxml"));
-        Parent root = miCargador.load();
-        
-        DetallesController controladorMiCuenta = miCargador.getController();
-        controladorMiCuenta.InitCuenta(greenBall,member);
         
         
         
-        JavaFXMLApplication.setRoot(root);
+       // DetallesController controladorMiCuenta = miCargador.getController();
+       // controladorMiCuenta.InitCuenta(greenBall,user); 
+        //JavaFXMLApplication.setRoot(root);
+        
+FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/detalles.fxml"));
+Parent root = miCargador.load();
+
+ DetallesController controladorMiCuenta = miCargador.getController();
+controladorMiCuenta.InitCuenta(greenBall,user); 
+Scene scene = new Scene(root,500,300);
+Stage stage = new Stage();
+stage.setScene(scene);
+stage.setTitle("Vista datos persona");
+stage.initModality(Modality.APPLICATION_MODAL);
+//la ventana se muestra modal
+stage.show();
     }
 
      
