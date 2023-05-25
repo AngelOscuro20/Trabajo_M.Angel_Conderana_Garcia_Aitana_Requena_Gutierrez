@@ -27,8 +27,8 @@
       </GridPane>
       <GridPane fx:id="grid" alignment="CENTER" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="420.0" minWidth="560.0" prefHeight="420.0" prefWidth="560.0" VBox.vgrow="NEVER">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="-Infinity" minWidth="80.0" prefWidth="80.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="80.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="110.39996337890625" minWidth="78.39996337890625" prefWidth="78.39996337890625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.60003662109375" minWidth="10.0" prefWidth="81.60003662109375" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
@@ -59,49 +59,88 @@
                </opaqueInsets>
                <GridPane.margin>
                   <Insets right="4.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
             <Label text="10:00 - 11:00" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="4.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
             <Label text="11:00 - 12:00" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="4.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
             <Label text="12:00 - 13:00" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="4.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
             <Label text="13:00 - 14:00" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="4.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
             <Label text="14:00 - 15:00" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="4.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
             <Label text="15:00 - 16:00" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="4.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
             <Label text="16:00 - 17:00" GridPane.halignment="RIGHT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="4.0" />
-               </GridPane.margin></Label>
+               </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
             <Label text="17:00 -18:00" GridPane.halignment="RIGHT" GridPane.rowIndex="9" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets right="4.0" />
                </GridPane.margin>
+               <font>
+                  <Font size="10.0" />
+               </font>
             </Label>
             <Label fx:id="labelCol2" alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="17.0" prefHeight="18.0" prefWidth="216.0" text="Pista 2" GridPane.columnIndex="2" />
-            <Label text="18:00 -19:00" GridPane.rowIndex="10" />
-            <Label text="19:00 - 20:00" GridPane.rowIndex="11" />
-            <Label text="20:00 -21:00" GridPane.rowIndex="12" />
-            <Label text="21:00 -22:00" GridPane.rowIndex="13" />
+            <Label text="18:00 -19:00" GridPane.rowIndex="10">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+            <Label text="19:00 - 20:00" GridPane.rowIndex="11">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+            <Label text="20:00 -21:00" GridPane.rowIndex="12">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+            <Label text="21:00 -22:00" GridPane.rowIndex="13">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
             <Label alignment="CENTER" contentDisplay="CENTER" text="Pista 3" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Label alignment="CENTER" contentDisplay="CENTER" text="Pista 4" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Label text="Pista 5" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Label text="Pista 6" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label text="Pista 6" GridPane.columnIndex="6" />
          </children>
       </GridPane>
       <Label fx:id="slotSelected" textFill="#6811f5" VBox.vgrow="NEVER">
