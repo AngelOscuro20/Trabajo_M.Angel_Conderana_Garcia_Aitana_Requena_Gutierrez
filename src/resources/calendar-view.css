@@ -19,7 +19,7 @@ and open the template in the editor.
 .time-slot-libre{
     -fx-background-color: black, red ;
     -fx-background-insets: 0, 1 1 0 0 ;
-    -fx-cursor: hand;
+   
     
     -fx-background-radius: 9 9 9 9;
     -fx-border-radius: 9 9 9 9;
@@ -35,12 +35,13 @@ and open the template in the editor.
 
 #panelFondo{
     
-    -fx-background-color: linear-gradient(to bottom right, red, black);
+    -fx-background-color: linear-gradient(to right bottom   ,lightgreen, darkgreen);
 }
 
 
 .label{
-    -fx-text-fill: yellow;
+    -fx-text-fill: gold;
+    -fx-font-family: "Comic Sans MS";
     
     
 }

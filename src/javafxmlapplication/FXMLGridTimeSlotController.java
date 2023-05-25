@@ -265,7 +265,7 @@ public class FXMLGridTimeSlotController implements Initializable {
             List<Booking> memberBookings = null;
             Booking booking = null;
             boolean disponible = true;
-            if (event.getClickCount() > 1) {
+            if (event.getClickCount() > 1 && timeSlot.getNick().getText().equals("")  ) {
                 Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("SlotTime");
                 alerta.setHeaderText("Confirma la selecció");
@@ -276,7 +276,7 @@ public class FXMLGridTimeSlotController implements Initializable {
                 if (result.isPresent() && result.get() == ButtonType.OK) {
                     ObservableList<String> styles = timeSlot.getView().getStyleClass();
                     Court court = timeSlot.getCourt();
-                    if (styles.contains("time-slot")) {
+                    if (styles.contains("time-slot") ) {
                         memberBookings = club.getUserBookings(user.getNickName());
                         for(int i = 0; i < memberBookings.size() - 1;i++){
                         //mira hacia abajo
