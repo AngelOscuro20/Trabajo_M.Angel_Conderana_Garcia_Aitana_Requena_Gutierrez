@@ -15,11 +15,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLDocumentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLDocumentController">
    <center>
       <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="487.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="pruebaTexto" prefHeight="18.0" prefWidth="170.0" text="Label" />
+            <Label fx:id="pruebaTexto" prefHeight="18.0" prefWidth="170.0" text="Fecha:" />
             <HBox>
                <children>
                   <DatePicker fx:id="day" onAction="#cambioDia" />
@@ -142,7 +142,6 @@
                      </HBox.margin>
                      <children>
                         <Button fx:id="iniciar" mnemonicParsing="false" onAction="#iniciarSesion" text="Iniciar Sesión" />
-                        <Button mnemonicParsing="false" text="ver cuenta" />
                      </children>
                   </VBox>
                   <ImageView fx:id="imgCuenta" fitHeight="78.0" fitWidth="84.0" onMouseClicked="#verCuenta" pickOnBounds="true" preserveRatio="true" />
@@ -155,12 +154,7 @@
 
       <VBox prefHeight="518.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
 
-      <VBox prefHeight="355.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="reservaBoton" mnemonicParsing="false" onAction="#reservaAccion" prefHeight="46.0" prefWidth="111.0" text="Hacer Reserva" />
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="103.0" text="Mis reservas" />
-         </children>
-      </VBox>
+      <VBox prefHeight="518.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
 
    </right>
 </BorderPane>

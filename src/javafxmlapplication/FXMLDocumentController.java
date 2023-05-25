@@ -191,7 +191,7 @@ stage.showAndWait();
      iniciar.setVisible(false);
      reservaBoton.setDisable(false);
      misReservasBoton.setDisable(false);
-     pruebaTexto.setText(user.getNickName());
+    
      imgCuenta.imageProperty().setValue(user.getImage()); 
      usuarioPresente = true;
      
@@ -222,8 +222,8 @@ stage.showAndWait();
         stage.setMinHeight(stage.getHeight());
         stage.showAndWait();
         if(controladorReservas.getPulsado() == true){
-            setTimeSlotsGrid(controladorReservas.getDia());
-            pruebaTexto.setText("true");
+             actualizarGrid(controladorReservas.getDia());
+            
         }
                                                                                                                                                     
     }
@@ -410,6 +410,7 @@ stage.showAndWait();
 
     
      public void actualizarGrid(LocalDate fecha){
+     day.setValue(fecha);
      setTimeSlotsGrid(fecha);
      }
 
