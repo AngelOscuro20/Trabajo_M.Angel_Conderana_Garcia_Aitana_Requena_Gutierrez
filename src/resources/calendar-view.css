@@ -12,6 +12,8 @@ and open the template in the editor.
     -fx-background-color: black, white ;
     -fx-background-insets: 0, 1 1 0 0 ;
     -fx-cursor: hand;
+    -fx-background-radius: 9 9 9 9;
+    -fx-border-radius: 9 9 9 9;
 }
 
 .time-slot-libre{

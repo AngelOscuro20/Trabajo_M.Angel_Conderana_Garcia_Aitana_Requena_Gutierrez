@@ -410,6 +410,8 @@ stage.showAndWait();
 
     
      public void actualizarGrid(LocalDate fecha){
+         setTimeSlotsGrid(fecha.plusDays(1));
+         day.setValue(fecha.plusDays(1));
      day.setValue(fecha);
      setTimeSlotsGrid(fecha);
      }
