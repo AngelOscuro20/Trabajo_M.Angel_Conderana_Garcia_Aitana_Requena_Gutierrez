@@ -405,7 +405,7 @@ stage.showAndWait();
         stage.showAndWait();
         stage.setMinWidth(stage.getWidth());
         stage.setMinHeight(stage.getHeight());
-        
+        actualizarGrid(dia);
     }
 
     

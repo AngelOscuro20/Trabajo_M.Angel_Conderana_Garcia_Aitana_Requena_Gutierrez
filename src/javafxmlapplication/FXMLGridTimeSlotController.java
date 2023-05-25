@@ -100,6 +100,7 @@ public class FXMLGridTimeSlotController implements Initializable {
     }
 
     private void setTimeSlotsGrid(LocalDate date) {
+       
         //actualizamos la seleccion
 
         timeSlotSelected.setValue(null);
@@ -159,6 +160,7 @@ public class FXMLGridTimeSlotController implements Initializable {
                 if (!pista2.isEmpty() && styles2.contains("time-slot") && pista2.get(j2).getFromTime().atDate(dia).isEqual(timeSlot2.getStart())) {
                     timeSlot.setCourt(pista2.get(j2).getCourt());
                     timeSlot2.getNick().setText(pista2.get(j2).getMember().getNickName());
+                    
                     styles2.remove("time-slot");
                     styles2.add("time-slot-libre");
                 }
