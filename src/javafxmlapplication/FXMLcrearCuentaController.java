@@ -4,12 +4,16 @@
  */
 package javafxmlapplication;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.function.UnaryOperator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -18,6 +22,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.control.TextFormatter.Change;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import model.Club;
 import model.ClubDAOException;
@@ -56,6 +64,11 @@ public class FXMLcrearCuentaController implements Initializable {
     private int svcValue;
     private Member newUser = null;
     private Club club;
+    @FXML
+    private ImageView imgView;
+    public String imgP  = new String(""); 
+    private boolean fotoCambiada;
+    private Image imgAux;
   
 
     /**
@@ -106,6 +119,7 @@ public class FXMLcrearCuentaController implements Initializable {
                                 } catch (ClubDAOException e) {
                                     rcb.setText("error al crear la cuenta,revisa todos los parametros");
                                 }
+                                if(fotoCambiada){newUser.setImage(imgAux);}
                                 Alert alert = new Alert(AlertType.INFORMATION);
 
                                 alert.setHeaderText(null);
@@ -135,6 +149,8 @@ public class FXMLcrearCuentaController implements Initializable {
                                     rcb.setText("error al crear la cuenta,revisa todos los parametros");
                                 }
                                 
+                                if(fotoCambiada){newUser.setImage(imgAux);}
+                                
                                 Alert alert = new Alert(AlertType.INFORMATION);
 
                                 alert.setHeaderText(null);
@@ -163,6 +179,26 @@ public class FXMLcrearCuentaController implements Initializable {
 
         club = b;
 
+    }
+
+    @FXML
+    private void imgPick(ActionEvent event) throws IOException {
+                FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/imagenes.fxml"));
+Parent root = miCargador.load();
+
+ ImagenesController controladorMiImagen = miCargador.getController();
+
+Scene scene = new Scene(root,500,300);
+Stage stage = new Stage();
+stage.setScene(scene);
+stage.setTitle("Vista imagenes");
+stage.initModality(Modality.APPLICATION_MODAL);
+//la ventana se muestra modal
+stage.showAndWait();
+imgP = controladorMiImagen.getImage();
+ imgAux = new Image(imgP);
+imgView.setImage(imgAux);
+fotoCambiada=true;
     }
 
 }

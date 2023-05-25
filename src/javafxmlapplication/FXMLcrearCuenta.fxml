@@ -5,10 +5,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLcrearCuentaController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLcrearCuentaController">
    <children>
       <Label text="REGISTRA TU CUENTA">
          <VBox.margin>
@@ -18,39 +20,59 @@
             <Insets bottom="20.0" />
          </padding>
       </Label>
-      <HBox>
+      <VBox prefHeight="133.0" prefWidth="456.0">
          <children>
-            <Label text="Nombre" />
-            <TextField fx:id="name" />
-            <Label text="Apellidos">
-               <HBox.margin>
-                  <Insets left="20.0" />
-               </HBox.margin>
-            </Label>
-            <TextField fx:id="surname" />
+            <HBox prefHeight="0.0" prefWidth="436.0">
+               <children>
+                  <Label text="Nombre" />
+                  <TextField fx:id="name" />
+                  <Pane prefHeight="25.0" prefWidth="10.0" />
+                  <Label text="Apellidos">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="surname" />
+                  <VBox>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <Pane prefHeight="41.0" prefWidth="456.0" />
+            <HBox prefHeight="47.0" prefWidth="456.0">
+               <children>
+                  <Label text="Nº Telefono" />
+                  <TextField fx:id="telf" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="123.0" />
+                  <Pane prefHeight="48.0" prefWidth="36.0" />
+                  <Label text="nickname" />
+                  <TextField fx:id="nickname" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="115.0" />
+               </children>
+            </HBox>
+            <Pane layoutX="10.0" layoutY="35.0" prefHeight="1.0" prefWidth="436.0" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imgView" fitHeight="71.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button mnemonicParsing="false" onAction="#imgPick" prefHeight="25.0" prefWidth="110.0" text="elegir foto" />
+               </children>
+            </VBox>
          </children>
       </HBox>
-      <Label text="Número de teléfono">
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </Label>
-      <TextField fx:id="telf" />
-      <Label layoutX="10.0" layoutY="95.0" text="nickname">
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </Label>
-      <TextField fx:id="nickname" layoutX="10.0" layoutY="113.0" />
-      <Label text="contraseña">
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
-      </Label>
-      <PasswordField fx:id="password" />
-      <Label text="repetir contraseña" />
-      <PasswordField fx:id="password2" />
-      <Label fx:id="rcb" />
+      <HBox alignment="CENTER" prefHeight="54.0" prefWidth="456.0">
+         <children>
+            <Label text="contraseña" />
+            <PasswordField fx:id="password" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="129.0" />
+            <Pane prefHeight="47.0" prefWidth="45.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="97.0" text="repetir contraseña" />
+            <PasswordField fx:id="password2" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="117.0" />
+            <Label fx:id="rcb" />
+         </children>
+      </HBox>
       <VBox>
          <VBox.margin>
             <Insets top="20.0" />
@@ -75,7 +97,7 @@
             </HBox>
          </children>
       </VBox>
-      <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="72.0" prefWidth="436.0">
          <children>
             <Button fx:id="botonRegistrarse" mnemonicParsing="false" onAction="#registrarse" text="registrarse" />
             <Button fx:id="cancelarBoton" mnemonicParsing="false" onAction="#cancel" text="cancelar" />
