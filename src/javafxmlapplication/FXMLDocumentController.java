@@ -86,6 +86,7 @@ public class FXMLDocumentController implements Initializable {
     private List<Booking> pista5 = new ArrayList<>();
     private List<Booking> pista6 = new ArrayList<>();
     private Member user;
+    private boolean usuarioPresente = false;
     
     @FXML
     private Button reservaBoton;
@@ -115,7 +116,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ImageView imgCuenta;
 
-
+    
 
     
     //=========================================================
@@ -132,7 +133,7 @@ public class FXMLDocumentController implements Initializable {
         
        
         
-        //inicializa la imagen default, en teoría, si le apetece fufar
+
         
         try {
            greenBall = greenBall.getInstance();
@@ -164,7 +165,7 @@ public class FXMLDocumentController implements Initializable {
         setTimeSlotsGrid(day.getValue());
 
         //---------------------------------------------------------------------
-        // enlazamos timeSlotSelected con el label para mostrar la seleccion
+        
         reservaBoton.setDisable(true);
         misReservasBoton.setDisable(true);
     }
@@ -191,6 +192,9 @@ stage.showAndWait();
      reservaBoton.setDisable(false);
      misReservasBoton.setDisable(false);
      pruebaTexto.setText(user.getNickName());
+     imgCuenta.imageProperty().setValue(user.getImage()); 
+     usuarioPresente = true;
+     
  }
 
 
@@ -421,7 +425,8 @@ stage.setScene(scene);
 stage.setTitle("Vista datos persona");
 stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
-stage.show();
+stage.showAndWait();
+imgCuenta.setImage(user.getImage());
     }
 
      

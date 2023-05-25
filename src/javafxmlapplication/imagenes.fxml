@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -7,11 +8,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.ImagenesController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="elige una imagen" />
-      <GridPane>
+      <GridPane alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
@@ -19,23 +19,59 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="80.0" prefHeight="80.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="80.0" prefHeight="80.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="80.0" prefHeight="80.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ImageView fx:id="i1" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/avatars/default.png" />
+               </image></ImageView>
+            <ImageView fx:id="i2" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick2" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@../resources/avatars/men.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i3" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick3" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@../resources/avatars/men2.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i4" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick4" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <image>
+                  <Image url="@../resources/avatars/men3.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i5" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick5" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../resources/avatars/men4.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i6" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick6" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../resources/avatars/men5.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i7" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick7" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../resources/avatars/woman.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i8" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick8" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../resources/avatars/woman2.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i9" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick9" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../resources/avatars/woman3.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i10" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick10" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../resources/avatars/woman4.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i11" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick11" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../resources/avatars/woman5.PNG" />
+               </image></ImageView>
+            <ImageView fx:id="i12" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#imagenPick12" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../resources/avatars/woman6.PNG" />
+               </image></ImageView>
          </children>
       </GridPane>
    </children>

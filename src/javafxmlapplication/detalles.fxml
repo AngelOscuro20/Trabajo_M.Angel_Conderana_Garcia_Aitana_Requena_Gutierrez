@@ -55,7 +55,7 @@
                   <Insets left="20.0" />
                </HBox.margin>
             </Button>
-            <ImageView fx:id="imgPerf" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgCuenta" fitHeight="85.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>

@@ -13,13 +13,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.Club;
 import model.Member;
 
@@ -38,8 +42,6 @@ public class DetallesController implements Initializable {
     @FXML
     private TextField telf;
     @FXML
-    private ImageView imgPerf;
-    @FXML
     private TextField numTarjeta;
     @FXML
     private TextField cvs;
@@ -49,6 +51,10 @@ public class DetallesController implements Initializable {
     private Member User ;
     private Club club;
     public boolean cambiado = false;
+    public String imgP  = new String(""); 
+
+    @FXML
+    private ImageView imgCuenta;
     
     /**
      * Initializes the controller class.
@@ -101,7 +107,7 @@ System.out.println("CANCEL");
         rcb.setText("cambios realizados correctamente");
         }}
         
-        if(!numTarjeta.getText().isEmpty() || !cvs.getText().isEmpty()){
+        if(!numTarjeta.getText().isEmpty() || Integer.parseInt(cvs.getText())!=0){
          if(numTarjeta.getText().length()!=16||!(numTester(numTarjeta.getText()))){rcb.setText("numero de tarjeta incompatible");}else{
          if(cvs.getText().length()!=3||!numTester(cvs.getText())){rcb.setText(" cvs incompatible");}else{      
              
@@ -117,7 +123,24 @@ System.out.println("CANCEL");
     }
 
     @FXML
-    private void cambImg(ActionEvent event) {
+    private void cambImg(ActionEvent event) throws IOException {
+        
+        FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/imagenes.fxml"));
+Parent root = miCargador.load();
+
+ ImagenesController controladorMiImagen = miCargador.getController();
+
+Scene scene = new Scene(root,500,300);
+Stage stage = new Stage();
+stage.setScene(scene);
+stage.setTitle("Vista imagenes");
+stage.initModality(Modality.APPLICATION_MODAL);
+//la ventana se muestra modal
+stage.showAndWait();
+imgP = controladorMiImagen.getImage();
+Image imgAux = new Image(imgP);
+User.setImage(imgAux);
+  imgCuenta.imageProperty().setValue(User.getImage());       
     }
     
      public void InitCuenta(Club b,Member m) {
@@ -130,6 +153,7 @@ System.out.println("CANCEL");
         
         numTarjeta.setText(User.getCreditCard());
         cvs.setText(String.valueOf(User.getSvc()));
+        imgCuenta.imageProperty().setValue(User.getImage()); 
         
     }
 
