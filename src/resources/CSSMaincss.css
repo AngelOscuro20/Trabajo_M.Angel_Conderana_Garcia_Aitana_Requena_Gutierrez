@@ -1,0 +1,49 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27 may 2023, 17:16:36
+    Author     : aitan
+*/
+.button {
+  -fx-background-color: #4CAF50; /* Green */
+  -fx-border: none;
+  -fx-color: white;
+ -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 12px;
+}
+.date-picker{
+    
+   -fx-color: #4CAF50; /* Green */
+ -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 12px;
+  -fx-font:arial;
+}
+
+#gr{
+    -fx-text-fill: black;
+    
+}
+#titulo{
+  -fx-background-color: #b9dded /* Green */  
+    
+}
+
+.label{
+    
+    -fx-text-fill: black;
+    -fx-font-family: "Arial Black";
+}
+
+#greenBall {
+    
+    -fx-font-weight:bold;
+    -fx-font-style:italic;
+    -fx-text-fill: linear-gradient(to right,green, darkgreen);
+    
+}

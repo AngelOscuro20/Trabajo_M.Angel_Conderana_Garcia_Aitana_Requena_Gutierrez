@@ -35,13 +35,18 @@ and open the template in the editor.
 
 #panelFondo{
     
-    -fx-background-color: linear-gradient(to right bottom   ,lightgreen, darkgreen);
+    -fx-background-color: linear-gradient(#f9fffd,#c8fac5,#4CAF50);
 }
 
 
 .label{
-    -fx-text-fill: gold;
+    -fx-text-fill: black;
     -fx-font-family: "Arial Black";
+    
+    
+}
+#borderPane{
+    -fx-background-color: #f9fffd;
     
     
 }
