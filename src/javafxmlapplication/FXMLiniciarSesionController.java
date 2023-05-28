@@ -65,7 +65,7 @@ public class FXMLiniciarSesionController implements Initializable {
       else{cuentaLista = true;
        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();}
       }
-      catch(Exception e ){error.setText("error,comprueba el nombre y la contraseña");}
+      catch(Exception e ){error.setText("Error,comprueba el nombre y la contraseña");}
        
       
     }
@@ -86,7 +86,7 @@ controladorCrearCuenta.InitSesion(club);
 Scene scene = new Scene(root,500,550);
 Stage stage = new Stage();
 stage.setScene(scene);
-stage.setTitle("Vista datos persona");
+stage.setTitle("Registrarse");
 stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
 stage.show();

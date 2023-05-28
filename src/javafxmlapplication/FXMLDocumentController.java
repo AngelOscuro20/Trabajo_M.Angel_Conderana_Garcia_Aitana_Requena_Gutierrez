@@ -179,10 +179,10 @@ FXMLLoader(getClass().getResource("FXMLiniciarSesion.fxml"));
 Parent root = miCargador.load();
 FXMLiniciarSesionController controladorInicioSesion = miCargador.getController();
 controladorInicioSesion.InitSesion(greenBall);
-Scene scene = new Scene(root,500,300);
+Scene scene = new Scene(root,600,400);
 Stage stage = new Stage();
 stage.setScene(scene);
-stage.setTitle("Vista datos persona");
+stage.setTitle("Iniciar Sesion");
 stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
 stage.showAndWait();
@@ -210,10 +210,10 @@ stage.showAndWait();
         FXMLGridTimeSlotController controladorReservas = miCargador.getController();
         controladorReservas.initReservas(greenBall, user, dia);
         
-        Scene scene = new Scene(root, 600, 600);
+        Scene scene = new Scene(root, 650, 600);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Vista datos persona");
+        stage.setTitle("Hacer Reserva");
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
         stage.sizeToScene();
@@ -231,7 +231,8 @@ stage.showAndWait();
     private void calendarioAccion(ActionEvent event) {
         
         dia = calendario.valueProperty().getValue();
-        pruebaTexto.setText(greenBall.getBookings().toString());
+        
+        pruebaTexto.setText( pruebaTexto.getText() + calendario.valueProperty().getValue().format(DateTimeFormatter.ISO_DATE));
     }
 
 
@@ -394,10 +395,10 @@ stage.showAndWait();
         FXMLMisReservasController controladorMisReservas = miCargador.getController();
         controladorMisReservas.initMisReservas(greenBall, user);
         //controladorReservas.initReservas(greenBall,dia);
-        Scene scene = new Scene(root, 600, 600);
+        Scene scene = new Scene(root, 500, 350);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Vista datos persona");
+        stage.setTitle("Reservas Usuario");
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setResizable(false);
         stage.sizeToScene();
@@ -435,7 +436,7 @@ controladorMiCuenta.InitCuenta(greenBall,user);
 Scene scene = new Scene(root,500,300);
 Stage stage = new Stage();
 stage.setScene(scene);
-stage.setTitle("Vista datos persona");
+stage.setTitle("Detalles de la cuenta");
 stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
 stage.showAndWait();

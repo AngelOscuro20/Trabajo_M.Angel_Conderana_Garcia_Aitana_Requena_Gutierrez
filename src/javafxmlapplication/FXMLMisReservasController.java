@@ -5,8 +5,12 @@
 package javafxmlapplication;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +20,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -76,11 +82,24 @@ public class FXMLMisReservasController implements Initializable {
     @FXML
     private void borrarAccion(ActionEvent event) {
         Booking selected = reservasUsuario.getSelectionModel().getSelectedItem();
+        
+         if(selected.getMadeForDay().atTime(selected.getFromTime()).minusHours(24).isAfter(LocalDate.now().atTime(LocalTime.now()))){
+           Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+                alerta.setTitle("Borrar Reserva");
+                alerta.setHeaderText("¿Seguro que quieres borrar esta reserva?");
+                Optional<ButtonType> result = alerta.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.OK) {
         misReservas.remove(selected);
         try {
+           
             club.removeBooking(selected);
         } catch (ClubDAOException ex) {
             Logger.getLogger(FXMLMisReservasController.class.getName()).log(Level.SEVERE, null, ex);
         }
+            }
+    }else{Alert alerta2 = new Alert(Alert.AlertType.ERROR);
+                            alerta2.setTitle("Error");
+                            alerta2.setHeaderText("No puedes cancelar una reserva 24h horas antes de su fecha.");
+                            Optional<ButtonType> result2 = alerta2.showAndWait();}
     }
 }

@@ -1,0 +1,71 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 28 may 2023, 18:23:45
+    Author     : aitan
+*/
+
+.button {
+  -fx-background-color: #4CAF50; /* Green */
+  -fx-border: none;
+  -fx-color: white;
+ -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 12px;
+  -fx-font-family: "Arial Black";
+}
+.date-picker{
+    
+   -fx-color: #4CAF50; /* Green */
+ -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 12px;
+  -fx-font-family: "Arial Black";
+  
+}
+
+.tableView{
+  
+  -fx-font-size: 12px;
+  -fx-font-family: "Arial Black";
+  
+}
+.table-view .column-header-background .filler {
+   /* -fx-background-color: b9dded;
+    -fx-display: inline-block;
+    -fx-color: b9dded;
+    -fx-border-color:b9dded;*/
+}
+
+.table-view .column-header-background .label{
+     /*-fx-background-color: b9dded;
+     -fx-display: inline-block;
+     -fx-color: b9dded; 
+     -fx-border-color:b9dded;*/
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, lightgreen;
+   
+    
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #4CAF50;
+    
+    
+}
+
+#titulo{
+  -fx-background-color: #b9dded /* Green */  
+    
+}
+
+.label{
+    -fx-font-weight:bold;
+     -fx-font-size: 14px;
+}

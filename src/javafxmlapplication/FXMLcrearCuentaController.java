@@ -191,7 +191,7 @@ Parent root = miCargador.load();
 Scene scene = new Scene(root,500,300);
 Stage stage = new Stage();
 stage.setScene(scene);
-stage.setTitle("Vista imagenes");
+stage.setTitle("Selecciona una imagen");
 stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
 stage.showAndWait();

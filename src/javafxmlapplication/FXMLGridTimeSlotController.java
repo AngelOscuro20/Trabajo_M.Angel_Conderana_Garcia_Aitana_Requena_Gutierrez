@@ -268,8 +268,8 @@ public class FXMLGridTimeSlotController implements Initializable {
             if (event.getClickCount() > 1 && timeSlot.getNick().getText().equals("")  ) {
                 Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("SlotTime");
-                alerta.setHeaderText("Confirma la selecció");
-                alerta.setContentText("Has seleccionat: "
+                alerta.setHeaderText("¿Quieres reservar esta hora?");
+                alerta.setContentText("Has seleccionado: "
                         + timeSlot.getDate().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)) + ", "
                         + timeSlot.getTime().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)));
                 Optional<ButtonType> result = alerta.showAndWait();

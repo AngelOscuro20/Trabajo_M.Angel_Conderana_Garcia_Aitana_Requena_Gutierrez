@@ -13,7 +13,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
  -fx-text-align: center;
   -fx-text-decoration: none;
   -fx-display: inline-block;
-  -fx-font-size: 12px;
+  -fx-text-fill: black;
+    -fx-font-family: "Arial Black";
+  
 }
 .date-picker{
     
@@ -22,7 +24,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
   -fx-text-decoration: none;
   -fx-display: inline-block;
   -fx-font-size: 12px;
-  -fx-font:arial;
+  -fx-font-family: "Arial Black";
 }
 
 #gr{
@@ -46,4 +48,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-font-style:italic;
     -fx-text-fill: linear-gradient(to right,green, darkgreen);
     
+}
+
+#panelFondo{
+    
+    -fx-background-color: #f9fffd;
+  
 }

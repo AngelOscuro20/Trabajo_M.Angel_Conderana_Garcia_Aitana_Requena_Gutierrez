@@ -3,39 +3,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 27 may 2023, 18:05:35
+    Created on : 28 may 2023, 19:16:07
     Author     : aitan
 */
+.button {
+  -fx-background-color: #4CAF50; /* Green */
+  -fx-border: none;
+  -fx-color: white;
+   -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 12px;
+   -fx-font-family: "Arial Black" ;
+}
+
+.label{
+  -fx-font-size: 12px;
+   -fx-font-family: "Arial Black" ;
+}
 
 #titulo{
   -fx-background-color: #b9dded /* Green */  
     
 }
 
-.button {
-  -fx-background-color: #4CAF50; /* Green */
-  -fx-border: none;
-  -fx-color: white;
- -fx-text-align: center;
-  -fx-text-decoration: none;
-  -fx-display: inline-block;
-  -fx-font-size: 12px;
-  -fx-text-fill: black;
-    -fx-font-family: "Arial Black";
-}
-
 #tt{
      -fx-font-weight:bold;
      -fx-font-size: 14px;
-}
-
-.label{
-    -fx-text-fill: black;
-    -fx-font-family: "Arial Black";
-}
-
-
-#panelFondo{
-    -fx-background-color:#f9fffd;
-    
+        -fx-font-family: "Arial Black" ;
 }

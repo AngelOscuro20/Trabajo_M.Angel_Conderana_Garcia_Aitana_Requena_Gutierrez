@@ -6,32 +6,43 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLiniciarSesionController">
+<VBox id="panelFondo" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../resources/CSSRegistar.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLiniciarSesionController">
    <children>
-      <Label text="iniciar sesion" />
-      <Label text="usuario">
+      <Pane id="titulo" prefHeight="54.0" prefWidth="580.0">
+         <children>
+            <Label id="tt" alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="600.0" text="Iniciar sesión" textAlignment="CENTER" />
+         </children>
+      </Pane>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="67.0" text="Usuario" textAlignment="CENTER">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
       </Label>
-      <TextField fx:id="usuario" />
-      <Label text="contraseña">
+      <TextField fx:id="usuario" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin></TextField>
+      <Label alignment="CENTER" prefHeight="40.0" prefWidth="99.0" text="Contraseña">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
       </Label>
-      <PasswordField fx:id="contrasena" />
+      <PasswordField fx:id="contrasena" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" />
       <VBox alignment="BOTTOM_RIGHT">
          <children>
             <Label fx:id="error" />
             <HBox alignment="BOTTOM_RIGHT" prefHeight="56.0" prefWidth="560.0">
                <children>
-                  <Button fx:id="botonIniciar" mnemonicParsing="false" onAction="#iniciarSesion" text="aceptar" />
-                  <Button fx:id="botonCancelar" mnemonicParsing="false" onAction="#cancel" text="cancerlar">
+                  <Button fx:id="botonIniciar" mnemonicParsing="false" onAction="#iniciarSesion" text="aceptar">
                      <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="botonCancelar" mnemonicParsing="false" onAction="#cancel" text="cancelar">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="10.0" right="20.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -47,7 +58,4 @@
       <Label text="¿No tienes cuenta? Registrate" />
       <Button fx:id="botonCrear" mnemonicParsing="false" onAction="#crearCuenta" text="Crear cuenta" />
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
 </VBox>
