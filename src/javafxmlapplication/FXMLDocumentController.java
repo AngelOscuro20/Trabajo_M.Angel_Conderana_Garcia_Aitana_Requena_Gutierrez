@@ -433,7 +433,7 @@ Parent root = miCargador.load();
 
  DetallesController controladorMiCuenta = miCargador.getController();
 controladorMiCuenta.InitCuenta(greenBall,user); 
-Scene scene = new Scene(root,500,300);
+Scene scene = new Scene(root,600,400);
 Stage stage = new Stage();
 stage.setScene(scene);
 stage.setTitle("Detalles de la cuenta");
