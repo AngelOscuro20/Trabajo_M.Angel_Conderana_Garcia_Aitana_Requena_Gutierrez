@@ -55,6 +55,8 @@ public class DetallesController implements Initializable {
 
     @FXML
     private ImageView imgCuenta;
+    @FXML
+    private Label ttulo;
     
     /**
      * Initializes the controller class.
@@ -73,9 +75,6 @@ public class DetallesController implements Initializable {
        return true;   
     }
 
-    @FXML
-    private void cambCont(ActionEvent event) {
-    }
 
     @FXML
     private void cancelar(ActionEvent event) throws IOException {
@@ -124,23 +123,24 @@ System.out.println("CANCEL");
 
     @FXML
     private void cambImg(ActionEvent event) throws IOException {
-        
+
         FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/imagenes.fxml"));
-Parent root = miCargador.load();
+        Parent root = miCargador.load();
 
- ImagenesController controladorMiImagen = miCargador.getController();
+        ImagenesController controladorMiImagen = miCargador.getController();
 
-Scene scene = new Scene(root,500,300);
-Stage stage = new Stage();
-stage.setScene(scene);
-stage.setTitle("Selecciona una imagen");
-stage.initModality(Modality.APPLICATION_MODAL);
+        Scene scene = new Scene(root, 500, 300);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setTitle("Selecciona una imagen");
+        stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
-stage.showAndWait();
-imgP = controladorMiImagen.getImage();
-Image imgAux = new Image(imgP);
-User.setImage(imgAux);
-  imgCuenta.imageProperty().setValue(User.getImage());       
+        stage.showAndWait();
+        imgP = controladorMiImagen.getImage();
+        Image imgAux = new Image(imgP);
+        User.setImage(imgAux);
+        imgCuenta.imageProperty().setValue(User.getImage());    
     }
     
      public void InitCuenta(Club b,Member m) {
@@ -153,7 +153,9 @@ User.setImage(imgAux);
         
         numTarjeta.setText(User.getCreditCard());
         cvs.setText(String.valueOf(User.getSvc()));
-        imgCuenta.imageProperty().setValue(User.getImage()); 
+        imgCuenta.imageProperty().setValue(User.getImage());
+        
+        ttulo.setText("detalles de la cuenta de: "+User.getNickName());//no se por qué se puso ese nombre pero bueno asi se queda
         
     }
 

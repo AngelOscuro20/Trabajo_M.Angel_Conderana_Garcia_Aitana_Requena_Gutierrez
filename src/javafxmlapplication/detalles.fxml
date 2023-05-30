@@ -110,7 +110,7 @@
    <top>
       <VBox id="titulo" prefHeight="49.0" prefWidth="600.0" stylesheets="@misdetalles.css" BorderPane.alignment="CENTER">
          <children>
-            <Label id="tt" fx:id="titulo" prefHeight="31.0" prefWidth="216.0" stylesheets="@misdetalles.css" text="DETALLES DE TU CUENTA" />
+            <Label id="tt" fx:id="ttulo" prefHeight="31.0" prefWidth="209.0" stylesheets="@misdetalles.css" text="DETALLES DE TU CUENTA" />
          </children>
       </VBox>
    </top>

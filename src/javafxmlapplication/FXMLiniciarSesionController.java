@@ -77,19 +77,19 @@ public class FXMLiniciarSesionController implements Initializable {
 
     @FXML
     private void crearCuenta(ActionEvent event) throws IOException {
-              ((Button)event.getSource()).getScene().getWindow().hide();
-         FXMLLoader miCargador = new
-FXMLLoader(getClass().getResource("FXMLcrearCuenta.fxml"));
-Parent root = miCargador.load();
-FXMLcrearCuentaController controladorCrearCuenta = miCargador.getController();
-controladorCrearCuenta.InitSesion(club);
-Scene scene = new Scene(root,500,550);
-Stage stage = new Stage();
-stage.setScene(scene);
-stage.setTitle("Registrarse");
-stage.initModality(Modality.APPLICATION_MODAL);
+        ((Button) event.getSource()).getScene().getWindow().hide();
+        FXMLLoader miCargador = new FXMLLoader(getClass().getResource("FXMLcrearCuenta.fxml"));
+        Parent root = miCargador.load();
+        FXMLcrearCuentaController controladorCrearCuenta = miCargador.getController();
+        controladorCrearCuenta.InitSesion(club);
+        Scene scene = new Scene(root, 500, 550);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.setTitle("Registrarse");
+        stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
-stage.show();
+        stage.show();
     }
     
     public void InitSesion(Club b){

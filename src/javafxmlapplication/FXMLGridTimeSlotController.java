@@ -93,6 +93,8 @@ public class FXMLGridTimeSlotController implements Initializable {
     @FXML
     private Label labelCol2;
     private LocalDate dia;
+    @FXML
+    private Button salir;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -370,7 +372,14 @@ public class FXMLGridTimeSlotController implements Initializable {
 
     @FXML
     private void cambioDia(ActionEvent event) {
+        if(day.getValue().isBefore(LocalDate.now())){
+                            Alert alerta3 = new Alert(Alert.AlertType.ERROR);
+                            alerta3.setTitle("Error");
+                            alerta3.setHeaderText("No puedes hacer una reserva para un dia pasado.");
+                            Optional<ButtonType> result3 = alerta3.showAndWait();
+                            day.setValue(dia);
         
+        }else{
         dia = day.getValue();
         pista1 = club.getCourtBookings("Pista 1", dia);
         pista2 = club.getCourtBookings("Pista 2", dia);
@@ -379,6 +388,7 @@ public class FXMLGridTimeSlotController implements Initializable {
         pista5 = club.getCourtBookings("Pista 5", dia);
         pista6 = club.getCourtBookings("Pista 6", dia);
         setTimeSlotsGrid(day.getValue());
+    }
     }
 
     private void FXMLLoader(URL resource) {
@@ -391,6 +401,11 @@ public class FXMLGridTimeSlotController implements Initializable {
     public LocalDate getDia(){
     return dia;
     } 
+
+    @FXML
+    private void salirAccion(ActionEvent event) {
+       ((Button) event.getSource()).getScene().getWindow().hide();
+    }
    public class TimeSlot {
 
         private final LocalDateTime start;

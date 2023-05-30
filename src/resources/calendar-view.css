@@ -50,3 +50,25 @@ and open the template in the editor.
     
     
 }
+
+.button {
+  -fx-background-color: #4CAF50; /* Green */
+  -fx-border: none;
+  -fx-color: white;
+ -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 12px;
+  -fx-font-family: "Arial Black";
+}
+  
+  .date-picker{
+    
+   -fx-color: #4CAF50; /* Green */
+ -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 12px;
+  -fx-font-family: "Arial Black";
+  
+}
