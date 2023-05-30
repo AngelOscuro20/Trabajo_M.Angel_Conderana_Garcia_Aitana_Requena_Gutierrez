@@ -13,7 +13,7 @@
 
 <BorderPane id="panelFondo" stylesheets="@../resources/CSSRegistar.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLcrearCuentaController">
    <center>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0">
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="500.0">
          <children>
             <VBox prefHeight="133.0" prefWidth="456.0">
                <children>
@@ -55,7 +55,6 @@
                   <Pane prefHeight="47.0" prefWidth="45.0" />
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="42.0" prefWidth="139.0" text="repetir contraseña" />
                   <PasswordField fx:id="password2" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="117.0" />
-                  <Label fx:id="rcb" />
                </children>
             </HBox>
             <HBox alignment="CENTER">
@@ -92,7 +91,12 @@
                   </HBox>
                </children>
             </VBox>
-            <HBox alignment="BOTTOM_RIGHT" prefHeight="72.0" prefWidth="436.0">
+            <Label fx:id="rcb">
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="53.0" prefWidth="460.0">
                <children>
                   <Button fx:id="botonRegistrarse" mnemonicParsing="false" onAction="#registrarse" text="registrarse">
                      <HBox.margin>

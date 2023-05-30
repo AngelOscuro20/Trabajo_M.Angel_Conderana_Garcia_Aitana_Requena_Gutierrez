@@ -93,6 +93,8 @@ public class FXMLGridTimeSlotController implements Initializable {
     @FXML
     private Label labelCol2;
     private LocalDate dia;
+    @FXML
+    private Button salir;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -391,6 +393,11 @@ public class FXMLGridTimeSlotController implements Initializable {
     public LocalDate getDia(){
     return dia;
     } 
+
+    @FXML
+    private void salirAccion(ActionEvent event) {
+       ((Button) event.getSource()).getScene().getWindow().hide();
+    }
    public class TimeSlot {
 
         private final LocalDateTime start;

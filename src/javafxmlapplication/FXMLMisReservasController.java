@@ -102,4 +102,9 @@ public class FXMLMisReservasController implements Initializable {
                             alerta2.setHeaderText("No puedes cancelar una reserva 24h horas antes de su fecha.");
                             Optional<ButtonType> result2 = alerta2.showAndWait();}
     }
+
+    @FXML
+    private void salir(ActionEvent event) {
+        ((Button) event.getSource()).getScene().getWindow().hide();
+    }
 }

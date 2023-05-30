@@ -119,9 +119,7 @@ public class FXMLDocumentController implements Initializable {
     
 
     
-    //=========================================================
-    // event handler, fired when button is clicked or 
-    //                      when the button has the focus and enter is pressed
+ 
     private void handleButtonAction(ActionEvent event) {
         labelMessage.setText("C");
     }
@@ -179,8 +177,9 @@ FXMLLoader(getClass().getResource("FXMLiniciarSesion.fxml"));
 Parent root = miCargador.load();
 FXMLiniciarSesionController controladorInicioSesion = miCargador.getController();
 controladorInicioSesion.InitSesion(greenBall);
-Scene scene = new Scene(root,600,400);
+Scene scene = new Scene(root,400,400);
 Stage stage = new Stage();
+stage.setResizable(false);
 stage.setScene(scene);
 stage.setTitle("Iniciar Sesion");
 stage.initModality(Modality.APPLICATION_MODAL);
@@ -433,8 +432,10 @@ Parent root = miCargador.load();
 
  DetallesController controladorMiCuenta = miCargador.getController();
 controladorMiCuenta.InitCuenta(greenBall,user); 
-Scene scene = new Scene(root,500,300);
+Scene scene = new Scene(root,600,500);
+
 Stage stage = new Stage();
+stage.setResizable(false);
 stage.setScene(scene);
 stage.setTitle("Detalles de la cuenta");
 stage.initModality(Modality.APPLICATION_MODAL);
