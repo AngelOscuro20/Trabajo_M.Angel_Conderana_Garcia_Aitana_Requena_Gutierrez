@@ -19,6 +19,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -57,6 +58,10 @@ public class DetallesController implements Initializable {
     private ImageView imgCuenta;
     @FXML
     private Label ttulo;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private PasswordField password2;
     
     /**
      * Initializes the controller class.
@@ -96,6 +101,12 @@ System.out.println("CANCEL");
 
     @FXML
     private void aceptar(ActionEvent event) {
+        if (!password.getText().equals(password2.getText())) {
+            rcb.setText("las contraseñas no coinciden");
+        } else {
+            if (password.getText().length()< 6) {
+            rcb.setText("la contraseña ha de ser de al menos 6 caracteres");
+        } else {
         
         if(telf.getText().length()!=9||!numTester(telf.getText())){rcb.setText("numero de telefono incompatible");}else{
         if(name.getText().isEmpty()||surname.getText().isEmpty()){rcb.setText("tu nombre o tu apellido se encuentra vacio");}else{
@@ -104,6 +115,7 @@ System.out.println("CANCEL");
         User.setSurname(surname.getText());  
         User.setTelephone(telf.getText());
         rcb.setText("cambios realizados correctamente");
+        User.setPassword(password.getText());
         }}
         
         if(!numTarjeta.getText().isEmpty() || Integer.parseInt(cvs.getText())!=0){
@@ -120,6 +132,8 @@ System.out.println("CANCEL");
       }
         
     }
+        }
+    }
 
     @FXML
     private void cambImg(ActionEvent event) throws IOException {
@@ -129,7 +143,7 @@ System.out.println("CANCEL");
 
         ImagenesController controladorMiImagen = miCargador.getController();
 
-        Scene scene = new Scene(root, 400, 300);
+        Scene scene = new Scene(root, 500, 300);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setResizable(false);
@@ -150,11 +164,11 @@ System.out.println("CANCEL");
         name.setText(User.getName());
         surname.setText(User.getSurname());
         telf.setText(User.getTelephone());
-        
+       
         numTarjeta.setText(User.getCreditCard());
         cvs.setText(String.valueOf(User.getSvc()));
         imgCuenta.imageProperty().setValue(User.getImage());
-        
+        password.setText(User.getPassword());
         ttulo.setText("detalles de la cuenta de: "+User.getNickName());//no se por qué se puso ese nombre pero bueno asi se queda
         
     }
