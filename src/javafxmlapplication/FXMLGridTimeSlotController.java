@@ -296,9 +296,10 @@ public class FXMLGridTimeSlotController implements Initializable {
                         }
                         if(disponible){
                         try {
-                             
+                             if(user.checkHasCreditInfo()){
                             booking = club.registerBooking(LocalDateTime.now(), dia, timeSlot.getStart().toLocalTime(), true,timeSlot.getCourt(), user);
-                           
+                             }else
+                             {booking = club.registerBooking(LocalDateTime.now(), dia, timeSlot.getStart().toLocalTime(), false,timeSlot.getCourt(), user);}
                         } catch (ClubDAOException ex) {
                             Logger.getLogger(FXMLGridTimeSlotController.class.getName()).log(Level.SEVERE, null, ex);
                         }

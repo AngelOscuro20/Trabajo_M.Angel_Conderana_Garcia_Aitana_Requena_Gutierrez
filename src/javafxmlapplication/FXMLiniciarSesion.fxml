@@ -31,7 +31,7 @@
          </VBox.margin>
       </Label>
       <PasswordField fx:id="contrasena" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="200.0" />
-      <VBox alignment="BOTTOM_RIGHT">
+      <VBox alignment="CENTER">
          <children>
             <Label fx:id="error" />
             <HBox alignment="BOTTOM_CENTER" prefHeight="56.0" prefWidth="560.0">

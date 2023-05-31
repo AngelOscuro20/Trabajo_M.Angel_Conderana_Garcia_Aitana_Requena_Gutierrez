@@ -126,7 +126,7 @@
                   <Insets top="20.0" />
                </padding>
             </Label>
-            <HBox alignment="BOTTOM_RIGHT" prefHeight="53.0" prefWidth="460.0">
+            <HBox alignment="TOP_RIGHT" prefHeight="53.0" prefWidth="460.0">
                <children>
                   <Button fx:id="botonRegistrarse" mnemonicParsing="false" onAction="#registrarse" text="Registrarse">
                      <HBox.margin>

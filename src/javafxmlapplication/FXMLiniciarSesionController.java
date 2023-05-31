@@ -61,7 +61,7 @@ public class FXMLiniciarSesionController implements Initializable {
        
       
       try{ user = club.getMemberByCredentials(usuario.getText(),contrasena.getText());
-      if(user == null){error.setText("error , comprueba el nombre y la contraseña");}
+      if(user == null){error.setText("Error , comprueba el nombre y la contraseña");}
       else{cuentaLista = true;
        ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();}
       }

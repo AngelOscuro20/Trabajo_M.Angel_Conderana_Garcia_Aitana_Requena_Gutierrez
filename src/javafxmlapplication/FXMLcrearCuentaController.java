@@ -93,13 +93,16 @@ public class FXMLcrearCuentaController implements Initializable {
     private void registrarse(ActionEvent event) throws ClubDAOException {
 
         if (!password.getText().equals(password2.getText())) {
-            rcb.setText("las contraseñas no coinciden");
+            rcb.setText("Las contraseñas no coinciden");
+            } else {
+            if (password.getText().length() < 6) {
+                rcb.setText("La contraseña debe de ser de al menos 6 carácteres");
         } else {
             if (surname.getText().length() == 0 || name.getText().length() == 0) {
-                rcb.setText("nombre o apellido vacio");
+                rcb.setText("Nombre o apellido vacio");
             } else {
                 if (nickname.getText().length() == 0) {
-                    rcb.setText("username vacio");
+                    rcb.setText("Username vacio");
                 } else {
 
                     if (password.getText().length() == 0) {
@@ -132,21 +135,21 @@ public class FXMLcrearCuentaController implements Initializable {
                             
                             }
                             if ( svc.getText().length() != 3) {
-                                rcb.setText("error al introducir el svc");
+                                rcb.setText("Error al introducir el svc");
                             } else {
                                 if (numcred.getText().length() != 16 || !numTester(numcred.getText())) {
-                                    rcb.setText("error al introducir tu número de la tarjeta de credito");
+                                    rcb.setText("Error al introducir tu número de la tarjeta de credito");
                                 } else {
                                     try {
                                 svcValue = Integer.parseInt(svc.getText());
                             } catch (NumberFormatException e) {
-                                rcb.setText("letras introducidas en el svc");}
+                                rcb.setText("No puedes introducir letras en el svc");}
                                 
                                 try {
                                     newUser = club.registerMember(name.getText(), surname.getText(), telf.getText(), nickname.getText(), password.getText(), numcred.getText(), svcValue, null);
                                 } catch (ClubDAOException e) {
                                     
-                                    rcb.setText("error al crear la cuenta,revisa todos los parametros");
+                                    rcb.setText("Error al crear la cuenta,revisa todos los parametros");
                                 }
                                 
                                 if(fotoCambiada){newUser.setImage(imgAux);}
@@ -155,7 +158,7 @@ public class FXMLcrearCuentaController implements Initializable {
 
                                 alert.setHeaderText(null);
 
-                                alert.setContentText("cuenta creada correctamente, inicia sesion");
+                                alert.setContentText("Cuenta creada correctamente, inicia sesion");
                                 alert.showAndWait();
                                 ((Button) event.getSource()).getScene().getWindow().hide();
                                 
@@ -168,6 +171,7 @@ public class FXMLcrearCuentaController implements Initializable {
                 }
             }
         }
+    }
      // aqui se cierran todos los mensajes de error
     
     @FXML
