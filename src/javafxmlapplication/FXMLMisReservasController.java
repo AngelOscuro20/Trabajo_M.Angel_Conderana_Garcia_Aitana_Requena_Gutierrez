@@ -68,7 +68,12 @@ public class FXMLMisReservasController implements Initializable {
     user = member;
     nombre.setText("Reservas de " + user.getNickName());
     List<Booking> bookings = club.getUserBookings(member.getNickName());
-    misReservas = FXCollections.observableArrayList(bookings);
+    List<Booking> diezUltimas = null ;
+    if(bookings.size()> 10){
+    diezUltimas= bookings.subList(bookings.size() - 10, bookings.size());
+    }else{diezUltimas = bookings.subList(0, bookings.size());}
+    misReservas = FXCollections.observableArrayList(diezUltimas);
+    
     reservasUsuario.setItems(misReservas);
     fecha.setCellValueFactory(fechaPropiedad -> new ReadOnlyStringWrapper(fechaPropiedad.getValue().getMadeForDay().format(DateTimeFormatter.ISO_DATE) + " : " + fechaPropiedad.getValue().getFromTime().format(DateTimeFormatter.ISO_TIME) ));
 
