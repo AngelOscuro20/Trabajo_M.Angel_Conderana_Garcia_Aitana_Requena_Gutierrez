@@ -36,11 +36,11 @@
             <Label fx:id="error" />
             <HBox alignment="BOTTOM_CENTER" prefHeight="56.0" prefWidth="560.0">
                <children>
-                  <Button fx:id="botonIniciar" mnemonicParsing="false" onAction="#iniciarSesion" text="aceptar">
+                  <Button fx:id="botonIniciar" mnemonicParsing="false" onAction="#iniciarSesion" text="Aceptar">
                      <HBox.margin>
                         <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
                      </HBox.margin></Button>
-                  <Button fx:id="botonCancelar" mnemonicParsing="false" onAction="#cancel" text="cancelar">
+                  <Button fx:id="botonCancelar" mnemonicParsing="false" onAction="#cancel" text="Cancelar">
                      <HBox.margin>
                         <Insets bottom="20.0" left="10.0" right="20.0" />
                      </HBox.margin>

@@ -23,6 +23,6 @@
             <Label fx:id="nombre" alignment="CENTER" prefHeight="66.0" prefWidth="500.0" text="Label" />
          </children>
       </Pane>
-      <Button layoutX="366.0" layoutY="293.0" mnemonicParsing="false" onAction="#salir" prefHeight="25.0" prefWidth="57.0" text="salir" />
+      <Button layoutX="366.0" layoutY="293.0" mnemonicParsing="false" onAction="#salir" prefHeight="25.0" prefWidth="57.0" text="Salir" />
    </children>
 </AnchorPane>
