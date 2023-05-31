@@ -432,7 +432,9 @@ Parent root = miCargador.load();
 
  DetallesController controladorMiCuenta = miCargador.getController();
 controladorMiCuenta.InitCuenta(greenBall,user); 
+
 Scene scene = new Scene(root,600,500);
+
 
 Stage stage = new Stage();
 stage.setResizable(false);
