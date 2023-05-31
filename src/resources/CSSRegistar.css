@@ -22,6 +22,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
   -fx-font-size: 12px;
   -fx-text-fill: black;
     -fx-font-family: "Arial Black";
+    -fx-cursor: hand;
 }
 
 #tt{

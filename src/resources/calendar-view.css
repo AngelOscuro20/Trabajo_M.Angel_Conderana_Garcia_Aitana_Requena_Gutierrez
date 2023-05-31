@@ -60,6 +60,7 @@ and open the template in the editor.
   -fx-display: inline-block;
   -fx-font-size: 12px;
   -fx-font-family: "Arial Black";
+  -fx-cursor: hand;
 }
   
   .date-picker{

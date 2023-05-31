@@ -129,7 +129,7 @@ System.out.println("CANCEL");
 
         ImagenesController controladorMiImagen = miCargador.getController();
 
-        Scene scene = new Scene(root, 500, 300);
+        Scene scene = new Scene(root, 400, 300);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setResizable(false);

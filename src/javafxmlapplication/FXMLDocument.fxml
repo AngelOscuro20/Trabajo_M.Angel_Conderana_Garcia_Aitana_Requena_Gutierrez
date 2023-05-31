@@ -158,10 +158,11 @@
                         <Button fx:id="iniciar" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="28.0" prefWidth="177.0" text="Iniciar Sesión" />
                      </children>
                   </VBox>
-                  <ImageView fx:id="imgCuenta" fitHeight="78.0" fitWidth="84.0" onMouseClicked="#verCuenta" pickOnBounds="true" preserveRatio="true">
-                     <HBox.margin>
-                        <Insets left="20.0" right="20.0" />
-                     </HBox.margin></ImageView>
+                  <Button fx:id="botonVerCuenta" mnemonicParsing="false" onAction="#verCuenta">
+                     <graphic>
+                        <ImageView id="imgCuenta" fx:id="imgCuenta" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
                </children>
             </HBox>
          </children>

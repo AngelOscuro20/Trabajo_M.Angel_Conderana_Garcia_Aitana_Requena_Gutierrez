@@ -188,7 +188,7 @@ Parent root = miCargador.load();
 
  ImagenesController controladorMiImagen = miCargador.getController();
 
-Scene scene = new Scene(root,500,300);
+Scene scene = new Scene(root,400,300);
 Stage stage = new Stage();
 stage.setScene(scene);
 stage.setTitle("Selecciona una imagen");

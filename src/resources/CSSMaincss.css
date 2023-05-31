@@ -15,6 +15,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
   -fx-display: inline-block;
   -fx-text-fill: black;
     -fx-font-family: "Arial Black";
+    -fx-cursor: hand;
   
 }
 .date-picker{
@@ -54,4 +55,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     
     -fx-background-color: #f9fffd;
   
+}
+
+#paneImg{
+    -fx-border-color: #4CAF50;
+    
 }

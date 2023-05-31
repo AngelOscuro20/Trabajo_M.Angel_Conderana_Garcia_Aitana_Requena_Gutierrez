@@ -115,6 +115,9 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private ImageView imgCuenta;
+    private Pane paneImg;
+    @FXML
+    private Button botonVerCuenta;
 
     
 
@@ -166,6 +169,7 @@ public class FXMLDocumentController implements Initializable {
         
         reservaBoton.setDisable(true);
         misReservasBoton.setDisable(true);
+        botonVerCuenta.setVisible(false);
     }
   
 
@@ -193,6 +197,9 @@ stage.showAndWait();
     
      imgCuenta.imageProperty().setValue(user.getImage()); 
      usuarioPresente = true;
+     botonVerCuenta.setVisible(true);
+     
+     
      
  }
 
@@ -419,21 +426,14 @@ stage.showAndWait();
 
 
     @FXML
-    private void verCuenta(MouseEvent event) throws IOException {
-        
-        
-        
-       // DetallesController controladorMiCuenta = miCargador.getController();
-       // controladorMiCuenta.InitCuenta(greenBall,user); 
-        //JavaFXMLApplication.setRoot(root);
-        
-FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/detalles.fxml"));
-Parent root = miCargador.load();
+    private void verCuenta(ActionEvent event) throws IOException {
+        FXMLLoader miCargador = new FXMLLoader(getClass().getResource("/javafxmlapplication/detalles.fxml"));
+        Parent root = miCargador.load();
 
- DetallesController controladorMiCuenta = miCargador.getController();
-controladorMiCuenta.InitCuenta(greenBall,user); 
+        DetallesController controladorMiCuenta = miCargador.getController();
+    controladorMiCuenta.InitCuenta(greenBall,user); 
 
-Scene scene = new Scene(root,600,500);
+    Scene scene = new Scene(root,600,500);
 
 
 Stage stage = new Stage();
@@ -444,6 +444,7 @@ stage.initModality(Modality.APPLICATION_MODAL);
 //la ventana se muestra modal
 stage.showAndWait();
 imgCuenta.setImage(user.getImage());
+       
     }
 
      

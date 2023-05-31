@@ -15,6 +15,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
   -fx-display: inline-block;
   -fx-font-size: 12px;
    -fx-font-family: "Arial Black" ;
+   -fx-cursor: hand;
 }
 
 .label{
