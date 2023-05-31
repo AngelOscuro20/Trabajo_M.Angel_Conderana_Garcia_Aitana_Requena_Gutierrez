@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="500.0" stylesheets="@../resources/misReservas.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLMisReservasController">
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="472.0" stylesheets="@../resources/misReservas.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmlapplication.FXMLMisReservasController">
    <children>
-      <TableView fx:id="reservasUsuario" layoutX="18.0" layoutY="75.0" prefHeight="200.0" prefWidth="464.0">
+      <TableView fx:id="reservasUsuario" layoutX="10.0" layoutY="75.0" prefHeight="200.0" prefWidth="479.0">
         <columns>
           <TableColumn fx:id="fecha" prefWidth="145.5999755859375" text="Horario de la reserva" />
-          <TableColumn fx:id="pista" prefWidth="93.60003662109375" text="Pista" />
-            <TableColumn fx:id="fechaReserva" prefWidth="148.79998779296875" text="Fecha en la que se hizo" />
-            <TableColumn fx:id="pago" prefWidth="75.0" text="Pagada" />
+          <TableColumn fx:id="pista" prefWidth="55.2000732421875" text="Pista" />
+            <TableColumn fx:id="fechaReserva" prefWidth="180.0000457763672" text="Fecha en la que se hizo" />
+            <TableColumn fx:id="pago" prefWidth="95.199951171875" text="Pagada" />
         </columns>
       </TableView>
       <Button fx:id="borrar" layoutX="433.0" layoutY="293.0" mnemonicParsing="false" onAction="#borrarAccion" text="Borrar" />
