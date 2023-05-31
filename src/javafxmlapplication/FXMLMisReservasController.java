@@ -83,7 +83,7 @@ public class FXMLMisReservasController implements Initializable {
     private void borrarAccion(ActionEvent event) {
         Booking selected = reservasUsuario.getSelectionModel().getSelectedItem();
         
-         if(selected.getMadeForDay().atTime(selected.getFromTime()).minusHours(24).isAfter(LocalDate.now().atTime(LocalTime.now()))){
+         if(selected.getMadeForDay().atTime(selected.getFromTime()).minusHours(24).isAfter(LocalDate.now().atTime(LocalTime.now())) && selected.getMadeForDay().atTime(selected.getFromTime()).isAfter(LocalDate.now().atTime(LocalTime.now())) ){
            Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
                 alerta.setTitle("Borrar Reserva");
                 alerta.setHeaderText("¿Seguro que quieres borrar esta reserva?");
@@ -97,10 +97,16 @@ public class FXMLMisReservasController implements Initializable {
             Logger.getLogger(FXMLMisReservasController.class.getName()).log(Level.SEVERE, null, ex);
         }
             }
-    }else{Alert alerta2 = new Alert(Alert.AlertType.ERROR);
+    }else if(selected.getMadeForDay().atTime(selected.getFromTime()).isBefore(LocalDate.now().atTime(LocalTime.now()))){
+    Alert alerta2 = new Alert(Alert.AlertType.ERROR);
                             alerta2.setTitle("Error");
-                            alerta2.setHeaderText("No puedes cancelar una reserva 24h horas antes de su fecha.");
+                            alerta2.setHeaderText("No puedes cancelar una reserva del pasado");
                             Optional<ButtonType> result2 = alerta2.showAndWait();}
+    
+         else{Alert alerta3 = new Alert(Alert.AlertType.ERROR);
+                            alerta3.setTitle("Error");
+                            alerta3.setHeaderText("No puedes cancelar una reserva 24h horas antes de su fecha.");
+                            Optional<ButtonType> result2 = alerta3.showAndWait();}
     }
 
     @FXML
